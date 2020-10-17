@@ -1,13 +1,101 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  /* position: static; */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #3e3e3e;
+  font-size: 24px;
+}
+
+#root {
+  position: static;
+}
+
+#app {
+  position: static;
+}
+
+#navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 80px;
+  background-color: #ffd483;
+  /* z-index: -1; */
+}
+
+.title {
+  position: fixed;
+  left: 20vw;
+  top: 18vw;
+  background-color: lavender;
+  
+}
+
+.title p {
+  font-family: 'Courier New', Courier, monospace;
+  /* font-weight: bold; */
+}
+
+h1 {
+  /* position: fixed; */
+  font-family: "Baskerville";
+  font-weight: lighter;
+  font-size: 120px;
+}
+
+#intro {
+  margin-left: 20vw;
+  margin-top: 240px;
+  font-size: 1.3em;
+  font-family: 'Avenir Next';
+}
+
+#intro p {
+  text-align: right;
+  float: left;
+  margin-right: 20px;
+  font-family: 'Avenir Next';
+  font-weight: normal;
+}
+
+#intro ul {
+  float: left;
+  list-style: none;
+  color: #fff;
+}
+
+#intro li {
+  transition: all 0.4s ease-in;
+  opacity: 0;
+  margin-top: -10px;
+}
+
+#intro li.show {
+  opacity: 1;
+  margin-top: 0px;
+}
+
+#intro li:nth-child(2) { transition-delay: 0.1s; }
+#intro li:nth-child(3) { transition-delay: 0.2s; }
+#intro li:nth-child(4) { transition-delay: 0.3s; }
+#intro li:nth-child(5) { transition-delay: 0.4s; }
+
+
+.content {
+  position: static;
+  top: 0;
+  height: 1000px;
+  width: 100vw;
+  background-color: lavenderblush;
+  padding: 90px;
+}
+
+.content ul {
+  float: left;
 }
