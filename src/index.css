@@ -5,18 +5,9 @@
 }
 
 body {
-  /* position: static; */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #3e3e3e;
   font-size: 24px;
-}
-
-#root {
-  position: static;
-}
-
-#app {
-  position: static;
 }
 
 #navbar {
@@ -26,7 +17,57 @@ body {
   width: 100vw;
   height: 80px;
   background-color: #ffd483;
-  /* z-index: -1; */
+  padding: 0px 80px 0px 80px;
+}
+
+#navbar h1 {
+  /* position: fixed; */
+  font-family: "Baskerville";
+  width: 50vw;
+  float: left;
+  font-weight: lighter;
+  font-size: 120px;
+}
+
+#buttons {
+  position: fixed;
+  padding: 20px 40px 10px 10px;
+  right: 0px;
+}
+
+#navbar button {
+  font-family: 'Avenir Next';
+  font-size: 30px;
+  font-weight: regular;
+  width: 220px;
+  color: #555;
+  background: none;
+  border: none;
+}
+
+#navbar button.active {
+  
+}
+
+#highlight {
+  position: fixed;
+  height: 4px;
+  width: 220px;
+  background-color: #FDB717;
+  margin-top: 44px;
+  margin-right: 40px;
+  z-index: -1;
+
+  transition: all 0.1s ease-out;
+}
+
+#bottomline {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100vw;
+  background-color: #ffd483;
 }
 
 .title {
@@ -41,14 +82,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
   /* font-weight: bold; */
 }
-
-h1 {
-  /* position: fixed; */
-  font-family: "Baskerville";
-  font-weight: lighter;
-  font-size: 120px;
-}
-
 #intro {
   margin-left: 20vw;
   margin-top: 240px;
@@ -89,13 +122,14 @@ h1 {
 
 .content {
   position: static;
-  top: 0;
+  top: 80px;
   height: 1000px;
   width: 100vw;
-  background-color: lavenderblush;
   padding: 90px;
 }
 
 .content ul {
   float: left;
 }
+
+/* styled classes */
