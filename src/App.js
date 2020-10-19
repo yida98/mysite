@@ -30,42 +30,6 @@ function App() {
       <Nav />
       <div className="body">
         <Page />
-        <ul>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-        </ul>
-        <ul>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-          <li>applications</li>
-          <li>product designs</li>
-          <li>3D tools</li>
-          <li>websites</li>
-          <li>ideas a reality</li>
-        </ul>
-  
-       
       </div>
     </div>
   );

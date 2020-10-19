@@ -10,73 +10,7 @@ body {
   font-size: 24px;
 }
 
-#navbar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 80px;
-  background-color: #ffd483;
-  padding: 0px 80px 0px 80px;
-}
 
-#navbar h1 {
-  /* position: fixed; */
-  font-family: "Baskerville";
-  width: 50vw;
-  float: left;
-  font-weight: lighter;
-  font-size: 120px;
-}
-
-#buttons {
-  position: fixed;
-  padding: 30px 40px 10px 10px;
-  right: 0px;
-}
-
-#navbar button {
-  font-family: 'Avenir Next';
-  font-size: 24px;
-  font-weight: regular;
-  width: 220px;
-  color: #555;
-  background: none;
-  border: none;
-}
-
-#navbar button.active {
-  
-}
-
-#highlight {
-  position: fixed;
-  height: 4px;
-  width: 220px;
-  background-color: #FDB717;
-  margin-top: 48px;
-  margin-right: 40px;
-  z-index: -1;
-
-  transition: all 0.1s ease-out;
-}
-
-#bottomline {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  height: 10px;
-  width: 100vw;
-  background-color: #ffd483;
-}
-
-/* .title {
-  position: fixed;
-  left: 20vw;
-  top: 18vw;
-  background-color: lavender;
-  
-} */
 
 .title p {
   font-family: 'Courier New', Courier, monospace;
@@ -121,8 +55,7 @@ body {
 
 
 .body {
-  position: static;
-  top: 80px;
+  margin-top: 80px;
   height: 1000px;
   width: 100vw;
   padding: 90px;

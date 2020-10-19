@@ -1,19 +1,23 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Page.css';
+import image from './waitmaiday.png';
 
 function Page() {
 
     return (
         <div className="page">
             <div className="tile"></div>
-            <div className="title">
-                <h2>Journ'</h2>
-                <p>the journaling app</p>
-            </div>
-            <div className="content">
-                <p>
-                Journ' is an intuitive journaling app for people who just want to write without distractions.
-                </p>
+            <img src={image} alt="Image" className="float"/>
+            <div className="right float">
+                <div className="title">
+                    <h2>Journ'</h2>
+                    <p>the journaling app</p>
+                </div>
+                <div className="content">
+                    <p>
+                    Journ' is an intuitive journaling app for people who just want to write without distractions.
+                    </p>
+                </div>
             </div>
         </div>
     )
