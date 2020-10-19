@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 
 import Nav from './Components/Nav';
-import Main from './Components/Main';
+import Page from './Components/Page';
 
 function App() {
 
@@ -28,8 +28,8 @@ function App() {
   return (
     <div id="app">
       <Nav />
-      <div className="content">
-        <Main />
+      <div className="body">
+        <Page />
         <ul>
           <li>applications</li>
           <li>product designs</li>

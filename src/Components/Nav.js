@@ -24,7 +24,7 @@ function Nav() {
     const click = useCallback((item) => (event) => {
         const newItems = [...navItems]
         newItems.map((i) => {
-            i.id == item.id ? (i.active = true && setActive(i.id)) : i.active = false;
+            return(i.id === item.id ? (i.active = true && setActive(i.id)) : i.active = false);
         })
         setItems(
             newItems
