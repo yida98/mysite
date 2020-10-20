@@ -4,7 +4,8 @@ import React, { useCallback, useEffect, useState } from 'react';
 function Article( {match, location}) {
 
   return (
-    <div className="article">
+    <div className="article body">
+      <p>My man</p>
     </div>
   );
 }

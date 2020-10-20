@@ -4,11 +4,14 @@ import './App.css';
 
 import Home from './Components/Home.js'
 import Article from './Components/Article.js'
+import Nav from './Components/Nav.js'
 
 function App() {
   return (
     <Router>
-      <Route path="/" component = {Home} />  
+
+      <Nav />
+      <Route exact path="/" component = {Home} />  
       <Route path="/:id" component = {Article} />  
     
     </Router> 

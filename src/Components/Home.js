@@ -27,7 +27,6 @@ function Home() {
   }, [])
   return (
     <div id="app">
-      <Nav />
       <div className="body">
         <Page />
       </div>

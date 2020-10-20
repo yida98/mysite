@@ -30,12 +30,12 @@ img:hover {
 }
 
 .content {
-    /* width: 200px; */
+    padding-bottom: 30px;
 }
 
 .right {
     width: 400px;
-    margin: 80px 0px 0px 60px;
+    margin: 80px 0px 0px 80px;
 }
 
 .tile {
