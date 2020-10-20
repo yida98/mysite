@@ -7,10 +7,12 @@
 img {
     height: 70vh;
     transition: all 0.2s ease-out;
+    z-index: -1;
 }
 
 img:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
+    z-index: -1;
 }
 
 .page {
@@ -25,6 +27,7 @@ img:hover {
 
 .title h2 {
     font-size: 72px;
+    color: #4cb5ae;
     font-family: Arial;
     font-weight: bold;
 }

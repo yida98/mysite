@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Page.css';
-import image from './waitmaiday.png';
+import image from './journ-display.png';
 import { Link } from "react-router-dom";
 
 function Page() {
@@ -19,7 +19,7 @@ function Page() {
                     Journ' is an intuitive journaling app for people who just want to write without distractions.
                     </p>
                 </div>
-                <Link to="/journ">read more</Link>
+                <Link to="/project/journ">read more {'>'}</Link>
             </div>
         </div>
     )

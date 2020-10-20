@@ -1,0 +1,40 @@
+.article  {
+    font-family: 'Avenir Next';
+    color: #444;
+    padding-left: 240px;
+    padding-right: 240px;
+    /* background-color: #F4F7F6; */
+}
+
+.article section {
+    padding-bottom: 60px;
+}
+
+.article h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4cb5ae;
+    font-size: 8em;
+    padding-bottom: 40px;
+}
+
+.article h2 {
+    color: #274044;
+    font-size: 2em;
+    padding-bottom: 40px;
+}
+
+.article h3 {
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+
+.article p {
+    color: #777;
+    padding-bottom: 40px;
+}
+
+.half {
+    display: flex;
+    /* justify-content: space-around; */
+    /* width: 30vw; */
+}

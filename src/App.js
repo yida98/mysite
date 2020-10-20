@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
 import Home from './Components/Home.js'
-import Article from './Components/Article.js'
 import Nav from './Components/Nav.js'
+import Article from './Components/Article.js'
+// import Resume from './Components/Nav.js'
+import About from './Components/About.js'
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
 
       <Nav />
       <Route exact path="/" component = {Home} />  
-      <Route path="/:id" component = {Article} />  
+      <Route exact path="/project/:id" component = {Article} />  
+      {/* <Route path="/resume" component = {Resume} />   */}
+      <Route exact path="/about" component = {About} />  
     
     </Router> 
   );

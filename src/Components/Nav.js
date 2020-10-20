@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import './Nav.css'
 
 function Nav() {
@@ -8,16 +9,19 @@ function Nav() {
           id: 2,
           title: "projects",
           active: true,
+          link: '/',
         },
         {
           id: 1,
           title: "Blender",
           active: false,
+          link: '/blender',
         },
         {
           id: 0,
           title: "about me",
           active: false,
+          link: '/about',
         },
       ]);
     const [activeId, setActive] = useState(2)
@@ -32,8 +36,6 @@ function Nav() {
         )
         console.log(navItems)
     }, [navItems]);
-
-    const buttonRef = React.createRef()
     
     return (
         <div id="navbar">
@@ -44,13 +46,14 @@ function Nav() {
                 <div id="buttons">
                 {navItems.map((item, index) => {
                     return(
-                    <button 
-                     key={index}
-                     ref={buttonRef}
-                     className={item.active ? 'active' : ''} 
-                     onClick={click(item)}>
-                        {item.title}
-                    </button>
+                    <Link to={item.link}>
+                        <button 
+                        key={index}
+                        className={item.active ? 'active' : ''} 
+                        onClick={click(item)}>
+                            {item.title}
+                        </button>
+                    </Link>
                     )
                 })}
             </div>
