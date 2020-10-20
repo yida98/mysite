@@ -56,8 +56,8 @@ body {
 
 .body {
   margin-top: 80px;
-  height: 1000px;
-  width: 100vw;
+  /* height: 1000px; */
+  /* width: 100vw; */
   padding: 90px;
 }
 
