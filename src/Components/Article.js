@@ -20,12 +20,13 @@ function Article( {match, location}) {
         <h2>Key Aspects</h2>
         <h3>Easy and fun to navigate</h3>
         <p>The app has very few views. It centers around the monthly calendar where the user can open up entries and edit them. Swiping left and right navigates the user's journal at the monthly granularity. Swiping up on the monthly bar enters the yearly summary of the months and swiping left and right on them navigates the user's journal at the yearly granularity. There are, all together, three main views and the navigation between them follow similar actions to create callback (i.e. swipe up to open means swipe down to close).</p>
-        <img src={IAImage} alt="IA" className="half"/>
         
-        <section className="half">        
-          <h3>Information Architecture</h3>
-          <p>This IA maps out the simple flow of the app. I wanted there to be very few decisions at every view. Since the structure of the app is so simple, the navigation becomes very straight forward.</p>
-
+        <section className="half">            
+          <img src={IAImage} alt="IA" className="half"/>
+          <div>
+            <h3>Information Architecture</h3>
+            <p>This IA maps out the simple flow of the app. I wanted there to be very few decisions at every view. Since the structure of the app is so simple, the navigation becomes very straight forward.</p>
+          </div>
         </section>
 
         <h3>Burden Free UI</h3>
@@ -36,9 +37,10 @@ function Article( {match, location}) {
 
       </section>
 
-      <img src={overlay} alt="overlay image" />
-      <img src={underlay} alt="underlay image" />
-
+      <section className="overlay">
+        <img src={underlay} alt="underlay image" />
+        <img src={overlay} alt="overlay image" className="over" />
+      </section>
       <Link to="/">back</Link>
 
     </div>
