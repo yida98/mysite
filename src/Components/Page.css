@@ -4,6 +4,7 @@
     color: #3e3e3e;
     margin-left: 40vw;
     transition: all 0.2s ease-out;
+    height: 100%;
 }
 
 .tile {
@@ -49,5 +50,8 @@
 }
 
 .page .wrapper {
-    position: static;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height:100vh;
 }

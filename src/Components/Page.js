@@ -9,12 +9,18 @@ import image from './assets/journ-display.png';
 function Page() {
 
     const [showArticle, toggleShow] = useState(false);
+    const [showID, setShow] = useState(null);
 
-    const clickMore = useCallback(() => (event) => {
-        const currState = showArticle
-        toggleShow(!currState)
+    const clickMore = useCallback((item) => (event) => {
+        if (showID == null) {
+            setShow(item.id)
+        } else {
+            setShow(null)
+        }
+        // const currState = showArticle
+        // toggleShow(!currState)
 
-    }, [showArticle])
+    }, [showID])
 
     const pages = [
         {
@@ -24,6 +30,7 @@ function Page() {
             subtitle: "the journaling app",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article show={showArticle} />,
+            // color: ""
         },
         {
             id: 1,
@@ -34,7 +41,6 @@ function Page() {
             article: <Article show={showArticle} />,
         },
     ]
-
 
     return (
         <div className="page">
@@ -54,6 +60,9 @@ function Page() {
                                     subtitle={item.subtitle}
                                     content={item.content}
                                     />
+                                    <button onClick={clickMore(item)} className={`${showArticle ? 'top' : ''}`} >
+                                        {showArticle ? "go back" : "read more!"}
+                                    </button>
                             </div>
 
                         </div>
@@ -61,9 +70,6 @@ function Page() {
 
                     })
             }
-            <button onClick={clickMore()} className={`${showArticle ? 'top' : ''}`} >
-                {showArticle ? "go back" : "read more!"}
-            </button>
 
         </div>
     )
