@@ -10,7 +10,13 @@ body {
   font-size: 20px;
 }
 
+img {
+  transition: all 0.2s ease-out;
+}
 
+img:hover {
+  transform: scale(1.05);
+}
 
 a:visited { text-decoration: none; color:#888; }
 a:hover { text-decoration: none; color:#888; }
@@ -61,7 +67,7 @@ a:hover, a:active { text-decoration: none; color:#888 }
 
 .body {
   margin-top: 80px;
-  /* height: 1000px; */
+  height: 2000px;
   /* width: 100vw; */
   padding: 90px;
 }

@@ -1,9 +1,9 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './Page.css';
-import image from './journ-display.png';
 import { Link } from "react-router-dom";
 
 import Article from './Article.js'
+import Descript from './Descript.js'
 
 function Page() {
 
@@ -18,22 +18,12 @@ function Page() {
 
     return (
         <div className="page">
-            <div className={`tile ${showArticle ? 'article' : ''}`}>{showArticle ? <Article /> : null}</div>
+            <div className={`tile ${showArticle ? 'article' : ''}`}>
+                {showArticle ? <Article /> : <Descript />}
 
-            <img src={image} alt="Image" className="float"/>
-            <div className="right float">
-                <div className="title">
-                    <h2>Journ'</h2>
-                    <p>the journaling app</p>
-                </div>
-                <div className="content">
-                    <p>
-                    Journ' is an intuitive journaling app for people who just want to write without distractions.
-                    </p>
-                </div>
-                {/* <Link to="/project/journ">read more {'>'}</Link> */}
             </div>
-            <button onClick={clickMore()}>read more!</button>
+            <button onClick={clickMore()} className={`${showArticle ? 'top' : ''}`} >read more!</button>
+
         </div>
     )
 }

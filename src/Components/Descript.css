@@ -1,0 +1,31 @@
+.descript {
+    display: flex;
+}
+
+.descript .title {
+    margin: 30px 0px 30px 0px;
+    color: #6A6A6A;
+}
+
+.descript .title h2 {
+    font-size: 72px;
+    color: #4cb5ae;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.descript .right {
+    width: 400px;
+    margin: 80px 0px 0px 80px;
+}
+
+.descript .content {
+    padding-bottom: 30px;
+}
+/* .descript .float {
+    float: left;
+} */
+
+.descript img {
+  height: 70vh;
+}
