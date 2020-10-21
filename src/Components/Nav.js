@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
-import './Nav.css'
+import './Nav copy.css'
 
 function Nav() {
 
@@ -31,24 +31,27 @@ function Nav() {
         newItems.map((i) => {
             return(i.id === item.id ? ((i.active = true) && (setActive(i.id))) : i.active = false);
         })
-        setItems(
-            newItems
-        )
-        console.log(navItems)
+        setItems(newItems)
+        if (item.id === 0) {
+            header.current.className = "about"
+        } else {
+            header.current.className = ""
+        }
     }, [navItems]);
+
+    let header = useRef(null);
     
     return (
         <div id="navbar">
             <div id="highlight" style={{
                 right: `${(activeId) * 140}px`,
             }}></div>
-            <h1>YIDA ZHANG</h1>
+            <h1 ref={header}>YIDA ZHANG</h1>
                 <div id="buttons">
                 {navItems.map((item, index) => {
                     return(
-                    <Link to={item.link}>
+                    <Link to={item.link} key={index}>
                         <button 
-                        key={index}
                         className={item.active ? 'active' : ''} 
                         onClick={click(item)}>
                             {item.title}
