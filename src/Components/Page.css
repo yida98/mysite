@@ -16,7 +16,7 @@
     transition: all 0.2s ease-out;
 }
 
-.tile.article {
+.tile.showarticle {
     width: 80vw;
     height: 80vh;
     margin-left: 0px;
@@ -26,6 +26,15 @@
 }
 
 .page button {
+    position: relative;
     margin-left: 30vw;
     margin-top: 30vw;
+    z-index: 10;
+    transition: all 0.2s ease-out;
+}
+
+.page .top{
+    margin-left: 0;
+    margin-top: 0;
+
 }

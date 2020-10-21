@@ -14,7 +14,7 @@ function About( {match, location}) {
             <li>paintings</li>
         </ul>
 
-        <p>The quality of my work comes from constant learning and critical thinking</p>
+        <p>I have multidisciplinary </p>
     </div>
   );
 }

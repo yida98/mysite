@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Home.css';
-
-import Nav from './Nav';
 import Page from './Page';
 
 function Home() {

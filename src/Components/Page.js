@@ -18,11 +18,13 @@ function Page() {
 
     return (
         <div className="page">
-            <div className={`tile ${showArticle ? 'article' : ''}`}>
+            <div className={`tile ${showArticle ? 'showarticle' : ''}`}>
                 {showArticle ? <Article /> : <Descript />}
 
             </div>
-            <button onClick={clickMore()} className={`${showArticle ? 'top' : ''}`} >read more!</button>
+            <button onClick={clickMore()} className={`${showArticle ? 'top' : ''}`} >
+                {showArticle ? "go back" : "read more!"}
+            </button>
 
         </div>
     )

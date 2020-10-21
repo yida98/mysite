@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
 import './Descript.css';
-import image from './journ-display.png';
+import image from './assets/journ-display.png';
 
 function Descript() {
 
