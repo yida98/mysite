@@ -2,74 +2,87 @@
     position: fixed;
     left: 0;
     top: 0;
-    /* width: 0;
-    height: 0; */
     width: 100vw;
-    height: 60px;
+    height: 10px;
+    /* width: 100vw;
+    height: 60px; */
     background-color: #ffd483;
     padding: 0px 80px 0px 80px;
-    
-    box-shadow: 0px 3px 5px #ccc;
-  }
-  
-  #navbar h1 {
-    font-family: "Baskerville";
-    width: 50vw;
-    float: left;
-    font-weight: lighter;
-    font-size: 80px;
-    padding-top: 15px;
-    transition: all 0.2s ease-out;
-  } 
-  
-  #navbar .about {
-    font-size: 120px;
-  }
-  
-  #buttons {
-    position: fixed;
-    margin: 20px 40px 10px 10px;
-    right: 0px;
-  }
-  
-  #navbar button {
-    font-family: 'Avenir Next';
-    font-size: 20px;
-    font-weight: regular;
-    width: 140px;
-    color: #555555;
-    opacity: 0.7;
-    background: none;
-    border: none;
-    transition: 0.2s;
-  }
-  
-  #navbar button:hover {
-    opacity: 1;
-  } 
-  
-  #navbar .active {
-    opacity: 1;
+    z-index: 10;
+    /* box-shadow: 0px 3px 5px #ccc; */
   }
 
-  #highlight {
-    position: fixed;
-    height: 4px;
-    width: 140px;
-    background-color: #FDB717;
-    margin-top: 34px;
-    margin-right: 40px;
-    /* padding:0px 10px 0px 10px; */
-    z-index: -1;
-  
-    transition: all 0.1s ease-out;
-  }
-  
-  #bottomline {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 10px;
-    width: 100vw;
-    background-color: #ffd483;
-  }
+#navbar h1 {
+  font-family: "SignPainter";
+  width: 50vw;
+  float: left;
+  font-weight: lighter;
+  font-size: 80px;
+  padding-top: 15px;
+  transition: all 0.2s ease-out;
+} 
+
+#navbar .about {
+  font-size: 120px;
+  color: #4cb5ae;
+}
+
+
+#buttons {
+  position: fixed;
+  margin: 20px 40px 10px 10px;
+  right: 0px;
+}
+
+#navbar button {
+  font-family: 'Avenir Next';
+  font-size: 20px;
+  font-weight: regular;
+  width: 140px;
+  color: #555555;
+  opacity: 0.7;
+  background: none;
+  border: none;
+  transition: 0.2s;
+}
+
+#navbar button:hover {
+  opacity: 1;
+} 
+
+#navbar .active {
+  opacity: 1;
+}
+
+#highlight {
+  position: fixed;
+  height: 6px;
+  width: 140px;
+  background-color: #ffd483;
+  margin-top: 10px;
+  margin-right: 40px;
+  /* padding:0px 10px 0px 10px; */
+  z-index: -1;
+  transition: all 0.1s ease-out;
+}
+
+#bottomline {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 100vw;
+  background-color: #ffd483;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 
+@keyframes stretch {
+  0%   {transform: scaleX(1.0);}
+  25%  {transform: scaleX(1.2);}
+  50%  {transform: scaleX(1.2);}
+  100% {transform: scaleX(1.0);}
+} */
