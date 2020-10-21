@@ -32,21 +32,14 @@ function Nav() {
             return(i.id === item.id ? ((i.active = true) && (setActive(i.id))) : i.active = false);
         })
         setItems(newItems)
-        if (item.id === 0) {
-            header.current.className = "about"
-        } else {
-            header.current.className = ""
-        }
     }, [navItems]);
-
-    let header = useRef(null);
     
     return (
         <div id="navbar">
             <div id="highlight" style={{
                 right: `${(activeId) * 140}px`,
             }}></div>
-            <h1 ref={header}>YIDA ZHANG</h1>
+            <h1 className={`${activeId === 0 ? 'about' : ''}`}>YIDA ZHANG</h1>
                 <div id="buttons">
                 {navItems.map((item, index) => {
                     return(
