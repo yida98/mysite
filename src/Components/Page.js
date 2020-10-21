@@ -11,26 +11,15 @@ function Page() {
     const [showArticle, toggleShow] = useState(false);
     const [showID, setShow] = useState(null);
 
-    const clickMore = useCallback((item) => (event) => {
-        if (showID == null) {
-            setShow(item.id)
-        } else {
-            setShow(null)
-        }
-        // const currState = showArticle
-        // toggleShow(!currState)
-
-    }, [showID])
-
-    const pages = [
+    const [pages, setPages] = useState([
         {
             id: 0,
             img: image,
             title: "Journ'",
             subtitle: "the journaling app",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
-            article: <Article show={showArticle} />,
-            // color: ""
+            article: <Article show={false} />,
+            show: false,
         },
         {
             id: 1,
@@ -38,9 +27,23 @@ function Page() {
             title: "What is this",
             subtitle: "the journaling app",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
-            article: <Article show={showArticle} />,
+            article: <Article show={false} />,
+            show: false,
         },
-    ]
+    ])
+
+    const clickMore = useCallback((item) => (event) => {
+        const newPages = pages.slice()
+
+        newPages.map((i) => {
+            return (i.id == item.id ? 
+                (i.show = !i.show) && (i.article = React.cloneElement(i.article, i.show)) 
+                : null) 
+        })
+        console.log(newPages)
+        setPages(newPages)
+
+    }, [pages])
 
     return (
         <div className="page">
@@ -51,17 +54,17 @@ function Page() {
                     return (
                         <div key={index} className="wrapper">
 
-                            <div className={`tile ${showArticle ? 'showarticle' : ''}`}>
+                            <div className={`tile ${item.show ? 'showarticle' : ''}`}>
                                 {item.article}
                                 <Descript 
-                                    show={!showArticle}
+                                    show={!item.show}
                                     img={item.img}
                                     title={item.title}
                                     subtitle={item.subtitle}
                                     content={item.content}
                                     />
-                                    <button onClick={clickMore(item)} className={`${showArticle ? 'top' : ''}`} >
-                                        {showArticle ? "go back" : "read more!"}
+                                    <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
+                                        {item.show ? "go back" : "read more!"}
                                     </button>
                             </div>
 
