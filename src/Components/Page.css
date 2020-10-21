@@ -14,27 +14,34 @@
     border-radius: 50%;
     margin-left: 10px;
     transition: all 0.2s ease-out;
+    scrollbar-color: none;
 }
 
 .tile.showarticle {
+
+    transform: translateX(-35vw);
     width: 80vw;
     height: 80vh;
     margin-left: 0px;
-    left: 10vw;
     border-radius: 40px;
     overflow-y: scroll;
 }
 
 .page button {
     position: relative;
-    margin-left: 30vw;
+    margin-left: 25vw;
     margin-top: 30vw;
     z-index: 10;
     transition: all 0.2s ease-out;
+    padding: 10px;
 }
 
-.page .top{
+.page .top {
     margin-left: 0;
     margin-top: 0;
 
+}
+
+.hide {
+    opacity: 0;
 }

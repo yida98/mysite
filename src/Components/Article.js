@@ -6,10 +6,10 @@ import IAImage from "./assets/journ-IA.png"
 import underlay from "./assets/journ-screens.png"
 import overlay from "./assets/journ-arrows.png"
 
-function Article( {match, location}) {
+function Article( {show} ) {
 
   return (
-    <div className="article">
+    <div className={`article ${show ? '' : 'hide'}`}>
       <h1>Journ'</h1>
       <section>
         <h2>Journ's Conception</h2>

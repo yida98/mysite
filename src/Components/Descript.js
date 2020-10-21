@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import './Descript.css';
 import image from './assets/journ-display.png';
 
-function Descript() {
+function Descript( {show} ) {
 
     return (
 
-        <div className="descript">
+        <div className={`descript ${show ? '' : 'hide'}`}>
             <img src={image} alt="Image" className="float"/>
             <div className="right float">
                 <div className="title">

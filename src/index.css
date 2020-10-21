@@ -8,6 +8,7 @@ body {
   font-family: 'Avenir Next', Arial, 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
   color: #3e3e3e;
   font-size: 20px;
+  opacity: 1;
 }
 
 img {
@@ -75,3 +76,18 @@ a:hover, a:active { text-decoration: none; color:#888 }
 .body ul {
   float: left;
 }
+
+button {
+
+  font-family: 'Avenir Next';
+  font-size: 20px;
+  font-weight: regular;
+  color: #555555;
+  opacity: 0.7;
+  background: none;
+  border: none;
+}
+
+button:hover {
+  opacity: 1;
+} 

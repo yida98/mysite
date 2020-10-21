@@ -19,7 +19,10 @@ function Page() {
     return (
         <div className="page">
             <div className={`tile ${showArticle ? 'showarticle' : ''}`}>
-                {showArticle ? <Article /> : <Descript />}
+                {/* {showArticle ? <Article show={showArticle} /> : <Descript show={!showArticle} />} */}
+
+                <Article show={showArticle} /> 
+                <Descript show={!showArticle} />
 
             </div>
             <button onClick={clickMore()} className={`${showArticle ? 'top' : ''}`} >

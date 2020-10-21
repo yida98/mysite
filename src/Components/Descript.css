@@ -1,5 +1,7 @@
 .descript {
+    position: absolute;
     display: flex;
+    transition: all 0.2s ease-out;
 }
 
 .descript .title {

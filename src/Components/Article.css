@@ -1,7 +1,9 @@
 .article  {
+    position: absolute;
     font-family: 'Avenir Next';
     color: #444;
     padding: 90px;
+    transition: all 0.2s ease-out;
 }
 
 .article section {
