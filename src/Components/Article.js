@@ -41,7 +41,6 @@ function Article( {show} ) {
         <img src={underlay} alt="underlay image" />
         <img src={overlay} alt="overlay image" className="over" />
       </section>
-      {/* <Link to="/">back</Link> */}
 
     </div>
   );

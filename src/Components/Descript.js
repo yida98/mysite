@@ -1,9 +1,8 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
 import './Descript.css';
 import image from './assets/journ-display.png';
 
-function Descript( {show} ) {
+function Descript( {show, img, title, subtitle = '', content} ) {
 
     return (
 
@@ -11,7 +10,7 @@ function Descript( {show} ) {
             <img src={image} alt="Image" className="float"/>
             <div className="right float">
                 <div className="title">
-                    <h2>Journ'</h2>
+                    <h2>title'</h2>
                     <p>the journaling app</p>
                 </div>
                 <div className="content">
