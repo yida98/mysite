@@ -33,14 +33,13 @@ function Page() {
     ])
 
     const clickMore = useCallback((item) => (event) => {
-        const newPages = pages.slice()
+        const newPages = [...pages]
 
-        newPages.map((i) => {
-            return (i.id == item.id ? 
-                (i.show = !i.show) && (i.article = React.cloneElement(i.article, i.show)) 
-                : null) 
+        newPages.splice(item.id, 1, {
+            ...item, 
+            show: !item.show, 
+            article: React.createElement(Article, {show: !item.show}), 
         })
-        console.log(newPages)
         setPages(newPages)
 
     }, [pages])
@@ -63,10 +62,10 @@ function Page() {
                                     subtitle={item.subtitle}
                                     content={item.content}
                                     />
-                                    <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
-                                        {item.show ? "go back" : "read more!"}
-                                    </button>
                             </div>
+                            <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
+                                {item.show ? "go back" : "read more!"}
+                            </button>
 
                         </div>
                     )
