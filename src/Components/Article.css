@@ -2,8 +2,26 @@
     position: absolute;
     font-family: 'Avenir Next';
     color: #444;
-    padding: 90px;
-    transition: all 0.2s ease-out;
+    margin: 90px;
+    /* transition: all 0.2s ease-out; */
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .article section {

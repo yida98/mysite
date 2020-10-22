@@ -5,17 +5,17 @@ import './Nav.css'
 function Nav() {
 
     const [navItems, setItems] = useState([
+        // {
+        //   id: 2,
+        //   title: "projects",
+        //   active: true,
+        //   link: '/',
+        // },
         {
-          id: 2,
+          id: 1,
           title: "projects",
           active: true,
           link: '/',
-        },
-        {
-          id: 1,
-          title: "Blender",
-          active: false,
-          link: '/blender',
         },
         {
           id: 0,
@@ -24,7 +24,7 @@ function Nav() {
           link: '/about',
         },
       ]);
-    const [activeId, setActive] = useState(2)
+    const [activeId, setActive] = useState(1)
     
     const click = useCallback((item) => (event) => {
         const newItems = [...navItems]

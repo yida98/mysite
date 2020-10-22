@@ -8,8 +8,9 @@ import image from './assets/journ-display.png';
 
 function Page() {
 
-    const [showArticle, toggleShow] = useState(false);
-    const [showID, setShow] = useState(null);
+    // const colorSchemes = [
+        
+    // ]
 
     const [pages, setPages] = useState([
         {
@@ -24,8 +25,17 @@ function Page() {
         {
             id: 1,
             img: image,
-            title: "What is this",
-            subtitle: "the journaling app",
+            title: "Rest+Order",
+            subtitle: "eating in restaurants for awkward people",
+            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            article: <Article show={false} />,
+            show: false,
+        },
+        {
+            id: 2,
+            img: image,
+            title: "Rest+Order",
+            subtitle: "eating in restaurants for awkward people",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article show={false} />,
             show: false,
@@ -40,6 +50,7 @@ function Page() {
             show: !item.show, 
             article: React.createElement(Article, {show: !item.show}), 
         })
+
         setPages(newPages)
 
     }, [pages])
