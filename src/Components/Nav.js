@@ -8,18 +8,18 @@ function Nav() {
         {
           id: 1,
           title: "projects",
-          active: window.location.pathname == "/",
+          active: window.location.pathname === "/",
           link: '/',
         },
         {
           id: 0,
           title: "about me",
-          active: window.location.pathname == "/about",
+          active: window.location.pathname === "/about",
           link: '/about',
         },
       ]);
 
-    const [activeItem, setActive] = useState(navItems.filter(item => item.link == window.location.pathname)[0])
+    const [activeItem, setActive] = useState(navItems.filter(item => item.active === true)[0])
     
     const click = useCallback((item) => (event) => {
         const newItems = [...navItems]
@@ -28,7 +28,7 @@ function Nav() {
         })
         setItems(newItems)
 
-    }, [navItems]);
+    }, []);
 
 
     return (

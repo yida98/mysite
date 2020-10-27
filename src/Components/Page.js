@@ -55,6 +55,11 @@ function Page() {
 
     }, [pages])
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+        console.log(window.scrollY)
+    }, [])
+
     return (
         <div className="page">
 

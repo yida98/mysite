@@ -5,7 +5,7 @@ import profile from "./assets/About2.JPG"
 
 import Resume from "./assets/YIDA ZHANG_Resume.pdf"
 
-function About( {match, location}) {
+function About() {
 
   const [headerText, setHeader] = useState("")
   const header = 'Hello there!'
@@ -14,6 +14,7 @@ function About( {match, location}) {
 
   useEffect(() => {
     typing(0)
+    window.scrollTo(0, 0)
   }, [])
 
   function typing(i) {
