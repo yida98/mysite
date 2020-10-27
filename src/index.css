@@ -73,6 +73,11 @@ a:hover, a:active { text-decoration: none; color:#888 }
   padding: 90px;
 }
 
+.body p {
+
+  line-height: 150%;
+}
+
 .body ul {
   float: left;
 }

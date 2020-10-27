@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
@@ -22,7 +22,7 @@ function App() {
       <Route exact path="/" component = {Home} />  
       <Route exact path="/project/:id" component = {Article} />  
       {/* <Route path="/resume" component = {Resume} />   */}
-      <Route exact path="/about" component = {About} />  
+      <Route exact path="/about" component = {About} /> 
     
 
       <button onClick={backToTop()} className="centre">Back to top</button>
