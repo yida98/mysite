@@ -38,9 +38,11 @@
 #navbar button {
   width: 140px;
   transition: 0.2s;
+  vertical-align: top;
 }
 
 #navbar .active {
+  padding-top: 10px;
   opacity: 1;
 }
 

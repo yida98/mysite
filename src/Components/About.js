@@ -13,8 +13,10 @@ function About() {
   const [cursor, setCursor] = useState(true)
 
   useEffect(() => {
-    typing(0)
     window.scrollTo(0, 0)
+    console.log(window.scrollY)
+    typing(0)
+
   }, [])
 
   function typing(i) {
