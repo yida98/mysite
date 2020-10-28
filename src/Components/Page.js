@@ -6,6 +6,8 @@ import Descript from './Descript.js'
 
 import image from './assets/journ-display.png';
 
+import backgroundImg from './assets/journ-bg.png';
+
 function Page() {
 
     // const colorSchemes = [
@@ -71,17 +73,19 @@ function Page() {
 
                             <div className={`tile ${item.show ? 'showarticle' : ''}`}>
                                 {item.article}
-                                <Descript 
-                                    show={!item.show}
-                                    img={item.img}
-                                    title={item.title}
-                                    subtitle={item.subtitle}
-                                    content={item.content}
-                                    />
                             </div>
-                            <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
-                                {item.show ? <p>go back</p> : <p>read more!</p> }
-                            </button>
+                                <div className="contentwrapper">
+                                    <Descript 
+                                        show={!item.show}
+                                        img={item.img}
+                                        title={item.title}
+                                        subtitle={item.subtitle}
+                                        content={item.content}
+                                        />
+                                    <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
+                                        {item.show ? <p>close</p> : <p>read more!</p> }
+                                    </button>
+                                </div>
 
                         </div>
                     )

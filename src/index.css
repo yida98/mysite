@@ -9,6 +9,7 @@ body {
   color: #3e3e3e;
   font-size: 20px;
   opacity: 1;
+  background-color: #E6E2D8;
 }
 
 img {
@@ -67,10 +68,7 @@ a:hover, a:active { text-decoration: none; color:#888 }
 
 
 .body {
-  margin-top: 80px;
-  /* height: 2000px; */
-  /* width: 100vw; */
-  padding: 90px;
+  margin-top: 180px;
 }
 
 .body p {
