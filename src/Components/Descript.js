@@ -9,7 +9,6 @@ function Descript( {show, img, title, subtitle = '', content} ) {
             <img src={img} alt="Image" className="float"/>
             <div className="right float">
                 <div className="title">
-                    <h2>{title}</h2>
                     <p>{subtitle}</p>
                 </div>
                 <div className="content">

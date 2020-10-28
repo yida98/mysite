@@ -20,7 +20,6 @@
 
 }
 
-
 .tile.showarticle {
     top: 0;
     height: 100%;
@@ -66,4 +65,15 @@
 
 .page .contentwrapper {
     margin-left: 50vw;
+}
+
+.page h2 {
+    position: absolute;
+    font-size: 72px;
+    color: #4cb5ae;
+    font-family: Arial;
+    font-weight: bold;
+    margin-left: 20vw;
+    vertical-align: middle;
+    
 }

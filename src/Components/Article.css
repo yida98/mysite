@@ -9,6 +9,7 @@
 }
 
 .article h2, .article h3, .article p, .half, .overlay {
+    position: relative;
     margin: 0 220px 0 220px;
 
 }

@@ -62,6 +62,27 @@ function Page() {
         console.log(window.scrollY)
     }, [])
 
+
+
+  const [yOffset, setOffset] = useState(0);
+  const [showIntro, setShow] = useState(false);
+
+  useEffect(() => {
+    function handleOffset() {
+      setOffset(window.pageYOffset)
+      // console.log(window.innerHeight)
+      // console.log(window.pageYOffset)
+    }
+
+    window.addEventListener("scroll", handleOffset)
+    setShow(!showIntro)
+
+    return () => {
+      setShow(false)
+      window.removeEventListener("scroll", handleOffset)
+    }
+  }, [])
+
     return (
         <div className="page">
 
@@ -72,6 +93,7 @@ function Page() {
                         <div key={index} className="wrapper">
 
                             <div className={`tile ${item.show ? 'showarticle' : ''}`}>
+                                {item.show ? <span /> :<h2>{item.title}</h2>}
                                 {item.article}
                             </div>
                                 <div className="contentwrapper">

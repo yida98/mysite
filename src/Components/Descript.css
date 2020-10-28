@@ -1,11 +1,12 @@
 .descript {
     position: absolute;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     transition: all 0.2s ease-out;
 }
 
 .descript .title {
-    margin: 30px 0px 30px 0px;
     color: #6A6A6A;
 }
 
@@ -21,17 +22,16 @@
 }
 
 .descript .right {
+    margin: 0 0 0 80px;
     width: 400px;
-    margin: 80px 0px 0px 80px;
+    grid-row: 2/3;
 }
 
 .descript .content {
     padding-bottom: 30px;
 }
-/* .descript .float {
-    float: left;
-} */
 
 .descript img {
   height: 70vh;
+  grid-row: 1/4;
 }
