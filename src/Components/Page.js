@@ -17,7 +17,7 @@ function Page() {
             id: 0,
             img: image,
             title: "Journ'",
-            subtitle: "the journaling app",
+            subtitle: "Swift | CloudKit | Sketch | Blender",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article show={false} />,
             show: false,
@@ -80,7 +80,7 @@ function Page() {
                                     />
                             </div>
                             <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
-                                {item.show ? "go back" : "read more!"}
+                                {item.show ? <p>go back</p> : <p>read more!</p> }
                             </button>
 
                         </div>

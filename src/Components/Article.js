@@ -41,8 +41,8 @@ function Article( {show} ) {
       </section>
 
       <section className="overlay">
-        <img src={underlay} alt="underlay image" />
-        <img src={overlay} alt="overlay image" className="over" />
+        <img src={underlay} alt="underlay" />
+        <img src={overlay} alt="overlay" className="over" />
       </section>
 
     </div>) : <div></div>

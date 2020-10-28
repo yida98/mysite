@@ -9,6 +9,7 @@
 #about h1 {
     font-family: 'Courier New', Courier, monospace;
     font-weight: normal;
+    color: #2E3D3C;
 }
 
 #about p, h2 {
@@ -59,4 +60,12 @@
 }
 #about a:hover {
     color: #aaa;
+}
+
+#about .line {
+    width: 30vw;
+    height: 1px;
+    background-color: #99886B;
+    margin: 30px auto 30px auto;
+    
 }

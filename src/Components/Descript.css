@@ -16,6 +16,10 @@
     font-weight: bold;
 }
 
+.descript .title p {
+    font-size: 0.8em;
+}
+
 .descript .right {
     width: 400px;
     margin: 80px 0px 0px 80px;
