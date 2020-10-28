@@ -30,6 +30,8 @@ function Nav() {
 
     }, []);
 
+    const scroll = "Apps   Full stack websites   Blender scripts   Paintings   3D models   2D animation    3D animation    UI/UX designs"
+
 
     return (
         <div id="navbar">
@@ -50,7 +52,8 @@ function Nav() {
                     )
                 })}
             </div>
-            <div id="bottomline"></div>
+            <div id="bottomline">
+            </div>
         </div>
     )
 }

@@ -6,11 +6,16 @@
     height: 10px;
     /* width: 100vw;
     height: 60px; */
-    background-color: #ffd483;
     padding: 0px 80px 0px 80px;
     z-index: 11;
     /* box-shadow: 0px 3px 5px #ccc; */
   }
+
+#navbar, #bottomline, #highlight {
+
+  /* background-color: #998A61; */
+  background-color: #ffd483;
+}
 
 #navbar h1 {
   font-family: "SignPainter";
@@ -51,7 +56,6 @@
   position: fixed;
   height: 6px;
   width: 140px;
-  background-color: #ffd483;
   margin-top: 10px;
   margin-right: 40px;
   /* padding:0px 10px 0px 10px; */
@@ -65,7 +69,11 @@
   bottom: 0;
   height: 10px;
   width: 100vw;
-  background-color: #ffd483;
+}
+
+#bottomline p {
+  font-size: 0.8em;
+  margin-top: -10px;
 }
 
 a {
