@@ -3,9 +3,11 @@ import './Descript.css';
 
 function Descript( {show, img, title, subtitle = '', content} ) {
 
-    return (
+    useEffect(() => {
+    }, [])
 
-        <div className={`descript ${show ? '' : 'hide'}`}>
+    return (
+        <div className={`descript`} >
             <img src={img} alt="Image" className="float"/>
             <div className="right float">
                 <div className="title">

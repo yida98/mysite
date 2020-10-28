@@ -10,10 +10,6 @@ import backgroundImg from './assets/journ-bg.png';
 
 function Page() {
 
-    // const colorSchemes = [
-        
-    // ]
-
     const [pages, setPages] = useState([
         {
             id: 0,
@@ -21,25 +17,25 @@ function Page() {
             title: "Journ'",
             subtitle: "Swift | CloudKit | Sketch | Blender",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
-            article: <Article show={false} />,
+            article: <Article />,
             show: false,
         },
         {
             id: 1,
             img: image,
-            title: "Rest+Order",
-            subtitle: "eating in restaurants for awkward people",
+            title: "Blender Scripts",
+            subtitle: "Python | Blender",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
-            article: <Article show={false} />,
+            article: <Article />,
             show: false,
         },
         {
             id: 2,
             img: image,
-            title: "Rest+Order",
-            subtitle: "eating in restaurants for awkward people",
+            title: "My Site",
+            subtitle: "ReactJS | Express | HTML/CSS | Git",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
-            article: <Article show={false} />,
+            article: <Article />,
             show: false,
         },
     ])
@@ -50,7 +46,6 @@ function Page() {
         newPages.splice(item.id, 1, {
             ...item, 
             show: !item.show, 
-            article: React.createElement(Article, {show: !item.show}), 
         })
 
         setPages(newPages)
@@ -82,7 +77,7 @@ function Page() {
       window.removeEventListener("scroll", handleOffset)
     }
   }, [])
-
+  
     return (
         <div className="page">
 
@@ -93,17 +88,16 @@ function Page() {
                         <div key={index} className="wrapper">
 
                             <div className={`tile ${item.show ? 'showarticle' : ''}`}>
-                                {item.show ? <span /> :<h2>{item.title}</h2>}
-                                {item.article}
+                                {item.show ? item.article :<h2>{item.title}</h2>}
                             </div>
                                 <div className="contentwrapper">
-                                    <Descript 
+                                    {item.show ? <div/> : (<Descript 
                                         show={!item.show}
                                         img={item.img}
                                         title={item.title}
                                         subtitle={item.subtitle}
                                         content={item.content}
-                                        />
+                                        />)}
                                     <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
                                         {item.show ? <p>close</p> : <p>read more!</p> }
                                     </button>

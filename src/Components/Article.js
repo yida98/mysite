@@ -1,18 +1,15 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Link } from "react-router-dom";
 import './Article.css';
 import bg from "./assets/journ-bg.png"
 import IAImage from "./assets/journ-IA.png"
 import underlay from "./assets/journ-screens.png"
 import overlay from "./assets/journ-arrows.png"
 
-function Article( {show} ) {
+function Article() {
 
   return (
-    show ?
-    (<div 
-      className="article" 
-      style={{ animation: `${show ? 'fade-in' : 'fade-out'} 1s` }}>
+    <div 
+      className="article" >
       <h1>Journ'</h1>
       <section>
         <h2>Journ's Conception</h2>
@@ -45,7 +42,7 @@ function Article( {show} ) {
         <img src={overlay} alt="overlay" className="over" />
       </section>
 
-    </div>) : <div></div>
+    </div>
   );
 }
 
