@@ -9,8 +9,8 @@
 .tile {
     position: absolute;
     width: 100%;
-    top: 25%;
-    height: 50%;
+    top: 30%;
+    height: 40%;
     background-color: #fff;
     transition: all 0.2s ease-out;
     scrollbar-color: none;
@@ -18,6 +18,12 @@
     border-top: 2px solid #EFEDE7;
     border-bottom: 2px solid #EFEDE7;
 
+}
+
+.tile:hover {
+    top: 25%;
+    height: 50%;
+    overflow-x: scroll;
 }
 
 .tile.showarticle {
@@ -29,7 +35,7 @@
 .page button {
     position: absolute;
     margin-left: 20vw;
-    margin-top: 25vw;
+    margin-top: 23vw;
     z-index: 10;
     transition: all 0.2s ease-out;
 }
@@ -43,7 +49,7 @@
 }
 
 .page .top {
-    margin-left: -40px;
+    /* margin-left: -40px; */
     margin-top: 0;
 }
 .page .top p {
@@ -67,13 +73,12 @@
     margin-left: 50vw;
 }
 
-.page h2 {
+.page .displayTitle {
     position: absolute;
     font-size: 72px;
-    color: #4cb5ae;
+    color: #ccc;
     font-family: Arial;
     font-weight: bold;
-    margin-left: 20vw;
-    vertical-align: middle;
-    
+    top: 20px;
+    left: 10vw;
 }

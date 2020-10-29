@@ -61,7 +61,7 @@ function About() {
         <h2>You seem interested</h2>
         <p>Shoot me an email at <span>yida</span><span>zhang</span><span>.ca@</span><span>gmai</span>l.com<span></span>!</p>
         
-        <p>Click <a href={Resume} download="YIDA_Resume">here</a> to download my resume</p>
+        <p>Click <a href={Resume} download="YIDA_Resume.pdf">here</a> to download my resume</p>
 
         <div className="line" ></div>    
       </div>

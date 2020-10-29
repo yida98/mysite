@@ -19,6 +19,7 @@ function Page() {
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article />,
             show: false,
+            initialLoad: false,
         },
         {
             id: 1,
@@ -28,6 +29,7 @@ function Page() {
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article />,
             show: false,
+            initialLoad: false,
         },
         {
             id: 2,
@@ -37,6 +39,7 @@ function Page() {
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
             article: <Article />,
             show: false,
+            initialLoad: false,
         },
     ])
 
@@ -78,6 +81,21 @@ function Page() {
     }
   }, [])
   
+  function display(item) {
+    if (!item.initialLoad) {
+        const newPages = [...pages]
+    
+        newPages.splice(item.id, 1, {
+            ...item, 
+            initialLoad: true, 
+        })
+    
+        setPages(newPages)
+        console.log(pages)
+
+    }
+  }
+
     return (
         <div className="page">
 
@@ -85,10 +103,12 @@ function Page() {
                 pages.map((item, index) => {
                     
                     return (
-                        <div key={index} className="wrapper">
+                        <div key={index} className="wrapper" onMouseOver={display(item)}>
 
-                            <div className={`tile ${item.show ? 'showarticle' : ''}`}>
-                                {item.show ? item.article :<h2>{item.title}</h2>}
+                            <div 
+                                className={`tile ${item.show ? 'showarticle' : ''}`} 
+                                onClick={item.show ? {} : clickMore(item)}>
+                                {item.show ? item.article :<h2 className="displayTitle">{item.title}</h2>}
                             </div>
                                 <div className="contentwrapper">
                                     {item.show ? <div/> : (<Descript 
