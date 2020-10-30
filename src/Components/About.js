@@ -16,26 +16,30 @@ function About() {
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    console.log(window.scrollY)
     typing(0)
 
   }, [])
 
-  function typing(i) {
+  const typing = useCallback((i) => {
     if (i < header.length) {
       setHeader(headerText => headerText + header[i])
       setTimeout(typing, 50, i+1)
     } else {
       flash(0)
     }
-  }
+  }, [headerText])
 
-  function flash(i) {
+  const flash = useCallback((i) => {
     if (i < 7) {
       setCursor(prev => !prev)
       setTimeout(flash, 300, i+1)
     }
-  }
+
+  }, [cursor])
+  
+  const logEvent = useCallback((event) => {
+    axios.post(window.location.href)
+  })
 
   return (
     <div id="about" className="body">
@@ -54,7 +58,6 @@ function About() {
         <p></p> 
         <p>Growing up as a mathlete, my love for <span className="">logic</span> transformed into professionally writing <span className="special">apps</span>, scripting, and building full stack <span className="special">websites</span>.</p>
         <p>My <span className="">artistic</span> side also kept blooming through building 3D projects, painting, learning art history, and, most notably, working as the <span className="special">lead UI/UX Designer</span> at a tech startup.</p>
-        {/* <p>I spend my time learning and practicing computer science, building 3D projects, looking through the Blender open source library, and studying art history.</p> */}
 
       </div>
 
@@ -63,7 +66,7 @@ function About() {
         <h2>You seem interested</h2>
         <p>Shoot me an email at <span>yida</span><span>zhang</span><span>.ca@</span><span>gmai</span>l.com<span></span>!</p>
         
-        <p>Click <a href={Resume} download="YIDA_Resume.pdf">here</a> to download my resume</p>
+        <p>Click <a href={Resume} download="YIDA_Resume.pdf" onSubmit={logEvent}>here</a> to download my resume</p>
 
         <div className="line" ></div>    
       </div>

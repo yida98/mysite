@@ -81,20 +81,20 @@ function Page() {
     }
   }, [])
   
-  function display(item) {
-    if (!item.initialLoad) {
-        const newPages = [...pages]
-    
-        newPages.splice(item.id, 1, {
-            ...item, 
-            initialLoad: true, 
-        })
-    
-        setPages(newPages)
-        console.log(pages)
+  const display = useCallback((item) => {
+        if (!item.initialLoad) {
+            const newPages = [...pages]
+        
+            newPages.splice(item.id, 1, {
+                ...item, 
+                initialLoad: true, 
+            })
+        
+            setPages(newPages)
+            console.log(pages)
 
-    }
-  }
+        }
+    })
 
     return (
         <div className="page">

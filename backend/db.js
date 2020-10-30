@@ -17,7 +17,6 @@ router.get('/', (req, res) => {
 router.post( '/', async (req, res, next) => {
     const newRequest = { time: new Date() }
     const created = await requests.insert(newRequest)
-    res.json(created)
 }); 
 
 module.exports = router;
