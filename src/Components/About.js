@@ -5,6 +5,8 @@ import profile from "./assets/About2.JPG"
 
 import Resume from "./assets/YIDA ZHANG_Resume.pdf"
 
+import axios from 'axios';
+
 function About() {
 
   const [headerText, setHeader] = useState("")
