@@ -15,7 +15,10 @@ function About() {
   const [cursor, setCursor] = useState(true)
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    if (window.scrollY > 0) {
+      window.scroll(0,0)
+
+    }
     typing(0)
 
   }, [])
@@ -36,10 +39,12 @@ function About() {
     }
 
   }, [cursor])
-  
-  const logEvent = useCallback((event) => {
-    axios.post(window.location.href)
-  })
+
+  const logEvent = useCallback(() => (event) => {
+    console.log("log event time")
+    axios.post('http://localhost:5000/about')
+    // axios.post(window.location.href)
+  }, [window.location])
 
   return (
     <div id="about" className="body">
@@ -66,7 +71,7 @@ function About() {
         <h2>You seem interested</h2>
         <p>Shoot me an email at <span>yida</span><span>zhang</span><span>.ca@</span><span>gmai</span>l.com<span></span>!</p>
         
-        <p>Click <a href={Resume} download="YIDA_Resume.pdf" onSubmit={logEvent}>here</a> to download my resume</p>
+        <p>Click <a href={Resume} download="YIDA_Resume.pdf" onClick={logEvent()}>here</a> to download my resume</p>
 
         <div className="line" ></div>    
       </div>

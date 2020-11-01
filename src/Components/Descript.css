@@ -1,8 +1,8 @@
 .descript {
     position: absolute;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 15vw 2fr;
+    grid-template-rows: 25vh 1fr 1fr;
     transition: all 0.2s ease-out;
 }
 
@@ -32,6 +32,7 @@
 }
 
 .descript img {
-  height: 70vh;
+  max-height: 40vw;
+  max-width: 20vw;
   grid-row: 1/4;
 }

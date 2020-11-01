@@ -1,19 +1,18 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Page.css';
 
 import Article from './Article.js'
 import Descript from './Descript.js'
 
-import image from './assets/journ-display.png';
-
-import backgroundImg from './assets/journ-bg.png';
+import journImage from './assets/journ-display.png';
+import blenderImage from './assets/blender-display.png';
 
 function Page() {
 
     const [pages, setPages] = useState([
         {
             id: 0,
-            img: image,
+            img: journImage,
             title: "Journ'",
             subtitle: "Swift | CloudKit | Sketch | Blender",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
@@ -23,7 +22,7 @@ function Page() {
         },
         {
             id: 1,
-            img: image,
+            img: blenderImage,
             title: "Blender Scripts",
             subtitle: "Python | Blender",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
@@ -33,7 +32,7 @@ function Page() {
         },
         {
             id: 2,
-            img: image,
+            img: journImage,
             title: "My Site",
             subtitle: "ReactJS | Express | HTML/CSS | Git",
             content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
@@ -57,44 +56,47 @@ function Page() {
 
     useEffect(() => {
         window.scrollTo(0, 0)
-        console.log(window.scrollY)
     }, [])
 
 
 
-  const [yOffset, setOffset] = useState(0);
-  const [showIntro, setShow] = useState(false);
+    const [yOffset, setOffset] = useState(0);
+    const [showIntro, setShow] = useState(false);
 
-  useEffect(() => {
-    function handleOffset() {
-      setOffset(window.pageYOffset)
-      // console.log(window.innerHeight)
-      // console.log(window.pageYOffset)
-    }
+    const [currentID, setCurrentID] = useState(0)
 
-    window.addEventListener("scroll", handleOffset)
-    setShow(!showIntro)
-
-    return () => {
-      setShow(false)
-      window.removeEventListener("scroll", handleOffset)
-    }
-  }, [])
-  
-  const display = useCallback((item) => {
-        if (!item.initialLoad) {
+    useEffect(() => {
+        const loadingItem = pages[currentID]
+        if (!loadingItem.initialLoad) {
+            console.log("first time loading")
             const newPages = [...pages]
         
-            newPages.splice(item.id, 1, {
-                ...item, 
+            newPages.splice(loadingItem.id, 1, {
+                ...loadingItem, 
                 initialLoad: true, 
             })
         
             setPages(newPages)
-            console.log(pages)
-
         }
-    })
+    }, [currentID])
+
+    useEffect(() => {
+        function handleOffset() {
+            setOffset(window.pageYOffset)
+            setCurrentID(Math.floor((window.scrollY + 300)/window.innerHeight))
+        }
+
+        window.addEventListener("scroll", handleOffset)
+        setShow(!showIntro)
+
+        return () => {
+            setShow(false)
+            window.removeEventListener("scroll", handleOffset)
+        }
+    }, [])
+  
+    const display = useCallback((item) => {
+    }, [pages])
 
     return (
         <div className="page">
@@ -103,14 +105,19 @@ function Page() {
                 pages.map((item, index) => {
                     
                     return (
-                        <div key={index} className="wrapper" onMouseOver={display(item)}>
+                        <div key={index} className="wrapper" >
 
                             <div 
                                 className={`tile ${item.show ? 'showarticle' : ''}`} 
                                 onClick={item.show ? {} : clickMore(item)}>
-                                {item.show ? item.article :<h2 className="displayTitle">{item.title}</h2>}
+                                {item.show ? item.article :<h2 className={`displayTitle`}>{item.title}</h2>}
                             </div>
-                                <div className="contentwrapper">
+                                <div className="contentwrapper"
+                                    style={{
+                                        opacity: `${item.initialLoad ? 1 : 0}`,
+                                        marginLeft: `${item.initialLoad ? 45 : 50}vw`,
+                                        // animation: `${item.initialLoad ? 'fade-in-content' : ''} 1s`,
+                                    }}>
                                     {item.show ? <div/> : (<Descript 
                                         show={!item.show}
                                         img={item.img}
@@ -134,3 +141,5 @@ function Page() {
 }
 
 export default Page;
+
+// 
