@@ -10,7 +10,7 @@ import journImage from './assets/journ-display.png';
 import blenderImage from './assets/blender-display.png';
 import websiteImage from './assets/mac-display.png';
 
-function Page() {
+function Page2() {
 
     const [pages, setPages] = useState([
         {
@@ -143,6 +143,4 @@ function Page() {
     )
 }
 
-export default Page;
-
-// 
+export default Page2;

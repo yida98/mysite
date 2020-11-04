@@ -9,7 +9,7 @@ body {
   color: #3e3e3e;
   font-size: 20px;
   opacity: 1;
-  background-color: #F7F6F3;
+  background-color: #FCFCF7;
 }
 
 img {
@@ -110,6 +110,16 @@ button:hover {
   }
   100% {
       opacity: 0;
+  }
+}
+
+@keyframes fade-in-s {
+  0% {
+      opacity: 0;
+
+  }
+  100% {
+      opacity: 1;
   }
 }
 

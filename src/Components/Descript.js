@@ -8,8 +8,8 @@ function Descript( {show, img, title, subtitle = '', content} ) {
 
     return (
         <div className={`descript`} >
-            <img src={img} alt="Image" className="float"/>
-            <div className="right float">
+            <img src={img} alt="Image" className=""/>
+            <div className="right">
                 <div className="title">
                     <p>{subtitle}</p>
                 </div>

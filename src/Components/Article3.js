@@ -5,12 +5,12 @@ import IAImage from "./assets/journ-IA.png"
 import underlay from "./assets/journ-screens.png"
 import overlay from "./assets/journ-arrows.png"
 
-function Article2() {
+function Article3() {
 
   return (
     <div 
       className="article" >
-      <h1>Blender Scripts</h1>
+      <h1>My Site</h1>
       <section>
         <h2>Journ's Conception</h2>
         <p>I love journaling; it’s therapeutic to write down your thoughts and when reading past entries back, you take a hike down memory lane. As my days get busier and busier, however, even moving to pick up a pencil seemed like too much of a chore. I have tried many other journalling apps, but they always had features or distracting and inconsistent aspects I didn’t like. So, I thought, why should I compromise when I know what I want? As someone who loves a challenge, I decided to make a journaling app that’s fun to navigate and gives the users zero burden to use.</p>
@@ -46,4 +46,4 @@ function Article2() {
   );
 }
 
-export default Article2;
+export default Article3;

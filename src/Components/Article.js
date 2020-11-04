@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import './Article.css';
-import bg from "./assets/journ-bg.png"
+import bg from "./assets/journ-bg.jpg"
 import IAImage from "./assets/journ-IA.png"
 import underlay from "./assets/journ-screens.png"
 import overlay from "./assets/journ-arrows.png"

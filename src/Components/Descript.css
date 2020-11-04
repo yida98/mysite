@@ -1,7 +1,7 @@
 .descript {
     position: absolute;
     display: grid;
-    grid-template-columns: 15vw 2fr;
+    grid-template-columns: 25vw 2fr;
     grid-template-rows: 25vh 1fr 1fr;
     transition: all 0.2s ease-out;
 }
@@ -22,7 +22,7 @@
 }
 
 .descript .right {
-    margin: 0 0 0 80px;
+    /* margin: 0 0 0 80px; */
     width: 400px;
     grid-row: 2/3;
 }
@@ -32,7 +32,9 @@
 }
 
 .descript img {
-  max-height: 40vw;
-  max-width: 20vw;
-  grid-row: 1/4;
+    display: flex;
+    max-height: 40vw;
+    max-width: 25vw;
+    grid-row: 1/4;
+    margin: auto;
 }
