@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './Descript.css';
+import './Descript2.css';
 
 function Descript( {show, img, title, subtitle = '', content} ) {
 
@@ -7,7 +7,7 @@ function Descript( {show, img, title, subtitle = '', content} ) {
     }, [])
 
     return (
-        <div className={`descript`} >
+        <div className="descript">
             <img src={img} alt="Image" className=""/>
             <div className="right">
                 <div className="title">

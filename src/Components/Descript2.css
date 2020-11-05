@@ -1,0 +1,26 @@
+.descript {
+    position: static;
+    display: grid;
+    grid-template-columns: 25vw 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    transition: all 0.2s ease-out;
+    width: 75vw;
+    height: 80%;
+    margin: auto;
+    margin-top: 10vh;
+
+}
+
+.descript .right {
+    min-width: 400px;
+    grid-row: 2/3;
+    margin: auto;
+}
+
+.descript img {
+    display: flex;
+    max-height: 80%;
+    max-width: 25vw;
+    grid-row: 1/4;
+    margin: auto;
+}
