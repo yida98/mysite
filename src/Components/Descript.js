@@ -1,20 +1,21 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Descript2.css';
 
-function Descript( {show, img, title, subtitle = '', content} ) {
+function Descript( {item, onClick} ) {
 
     useEffect(() => {
     }, [])
 
     return (
         <div className="descript">
-            <img src={img} alt="Image" className=""/>
-            <div className="right">
+            <img src={(item.img)} alt="Image" />
+            <div className="right" onClick={onClick(item)}>
+                <h2>{item.title}</h2>
                 <div className="title">
-                    <p>{subtitle}</p>
+                    <p>{item.subtitle}</p>
                 </div>
                 <div className="content">
-                    <p>{content}</p>
+                    <p>{item.content}</p>
                 </div>
             </div>
         </div>

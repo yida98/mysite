@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './Page.css';
+import './Page2.css';
 
 import Article from './Article.js'
 import Article2 from './Article2.js'

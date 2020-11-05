@@ -59,6 +59,17 @@ function Page2() {
         }
     }, [])
 
+    const toggleShow = useCallback((item) => () => {
+        const newPages = [...pages]
+        newPages.splice(item.id, 1, {
+            ...item, 
+            show: !item.show,
+        })
+        console.log("clicked at index:", item.id)
+
+        setPages(newPages)
+    }, [pages])
+
     return (
         <div className="page">
 
@@ -68,20 +79,19 @@ function Page2() {
                     return (
                         <div key={index} className="wrapper" >
                             
-                            <div className="tile top"/>
-                            <div className="tile bottom"/>
-                            <div className="contentWrapper">
-                                {item.show ? <div/> : (<Descript 
-                                    show={!item.show}
-                                    img={item.img}
-                                    title={item.title}
-                                    subtitle={item.subtitle}
-                                    content={item.content}
-                                    />)}
-                                <button className={`${item.show ? 'top' : ''}`} >
-                                    {item.show ? <p>close</p> : <p>read more!</p> }
-                                </button>
+                            <div className={`tile ${item.show ? 'show' : 'hide'}`} >
+                                {item.show ? item.article : <span/>}
                             </div>
+                            {item.show ? <span/> :  <div className="contentWrapper">
+                                <Descript 
+                                    item={item}
+                                    onClick={toggleShow}
+                                    />
+                                {/* <button className={`${item.show ? 'top' : ''}`} >
+                                    {item.show ? <p>close</p> : <p>read more!</p> }
+                                </button>                             */}
+                            </div>}
+                            
 
                         </div>
                     )
