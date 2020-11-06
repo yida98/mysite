@@ -7,9 +7,7 @@ function Descript( {item, onClick} ) {
     }, [])
 
     return (
-        <div className="descript" onClick={onClick(item)} style={{
-            marginTop: `${item.initialLoad ?  `${30}px` : `${-100}%`}`,
-        }}>
+        <div className={`descript`} onClick={onClick(item)}> 
             <h2>{item.title}</h2>
             <p className="subtitle">{item.subtitle}</p>
             <p className="content">{item.content}</p>

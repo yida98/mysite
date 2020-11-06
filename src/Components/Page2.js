@@ -18,30 +18,33 @@ function Page2() {
             img: journImage,
             title: "Journ'",
             subtitle: "Swift | CloudKit | Sketch | Blender",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "Journ' is an intuitive journaling app for people who just want to keep writing without distractions.",
             article: <Article />,
             show: false,
             initialLoad: false,
+            loadArticle: false,
         },
         {
             id: 1,
             img: blenderImage,
             title: "Blender Scripts",
             subtitle: "Python | Blender",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "An add-on full of tools to help with 3D character rigging in Blender.",
             article: <Article2 />,
             show: false,
             initialLoad: false,
+            loadArticle: false,
         },
         {
             id: 2,
             img: websiteImage,
             title: "My Site",
             subtitle: "ReactJS | Express | HTML/CSS | Git",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "A website to display my projects; you are here.",
             article: <Article3 />,
             show: false,
             initialLoad: false,
+            loadArticle: false,
         },
     ])
 
@@ -62,7 +65,7 @@ function Page2() {
     useEffect(() => {
         const currItem = pages[currID]
 
-        if (!currItem.initialLoad) {
+        if (!currItem.initialLoad && !currItem.show) {
             const newPages = [...pages]
             newPages.splice(currItem.id, 1, {
                 ...currItem, 
@@ -75,16 +78,17 @@ function Page2() {
     }, [currID, pages])
 
     const toggleShow = useCallback((item) => () => {
-        const newPages = [...pages]
+        let newPages = [...pages]
         newPages.splice(item.id, 1, {
             ...item, 
             show: !item.show,
+            initialLoad: !item.initialLoad,
         })
-        console.log("clicked at index:", item.id)
-
         setPages(newPages)
-    }, [pages])
+        
 
+    }, [pages])
+    
     return (
         <div className="page">
 
@@ -95,19 +99,28 @@ function Page2() {
                         <div key={index} className="wrapper" >
                             
                             <div className={`tile ${item.show ? 'show' : 'hide'}`} >
-                                {item.show ? item.article : <Descript 
-                                    item={item}
-                                    onClick={toggleShow}
-                                    />}
+                                <div className="art">
+                                    {item.article} </div>
+                                <div  className={`content ${item.initialLoad ? "down" : "up" }`}>
+                                    <Descript 
+                                        item={item}
+                                        onClick={toggleShow}
+                                    />
+                                </div>
                             </div>
                             <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
                                 {item.show ? <p>less</p> : <p>more</p> }
                             </button>      
-                            {item.show ? <span/> :  <div className="contentWrapper">
+                            <div className="contentWrapper">
+                                <img src={(item.img)} alt="Image" style={{
+                                    opacity: `${item.show ? 0 : 1}`,
+                                }} />             
+                            </div>
+                            {/* {item.show ? <span/> :  <div className="contentWrapper">
 
                                 <img src={(item.img)} alt="Image" />                      
                             </div>}
-                            
+                             */}
 
                         </div>
                     )
