@@ -12,13 +12,12 @@
 .descript .right {
     min-width: 400px;
     grid-row: 2/3;
-    margin: auto;
+    /* margin: auto; */
+    transition: all 0.5s ease-out;
 }
 
 
-
 .descript img {
-    display: flex;
     max-height: 80%;
     max-width: 25vw;
     grid-row: 1/4;

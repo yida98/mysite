@@ -9,7 +9,10 @@ function Descript( {item, onClick} ) {
     return (
         <div className="descript">
             <img src={(item.img)} alt="Image" />
-            <div className="right" onClick={onClick(item)}>
+            <div className="right" onClick={onClick(item)} style={{
+                marginTop: `${item.initialLoad ?  0 : `${-170}px`}`,
+                opacity: `${item.initialLoad ? 1 : 0}`,
+            }}>
                 <h2>{item.title}</h2>
                 <div className="title">
                     <p>{item.subtitle}</p>

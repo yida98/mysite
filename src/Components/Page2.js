@@ -49,7 +49,7 @@ function Page2() {
 
     useEffect(() => {
         function handleOffset() {
-            setCurrID(Math.floor(window.scrollY/window.screenY))
+            setCurrID(Math.floor((window.scrollY + 400)/window.innerHeight))
         }
 
         window.addEventListener("scroll", handleOffset)
@@ -58,6 +58,21 @@ function Page2() {
             window.removeEventListener("scroll", handleOffset)
         }
     }, [])
+
+    useEffect(() => {
+        const currItem = pages[currID]
+
+        if (!currItem.initialLoad) {
+            const newPages = [...pages]
+            newPages.splice(currItem.id, 1, {
+                ...currItem, 
+                initialLoad: true,
+            })
+
+            setPages(newPages)
+        }
+
+    }, [currID, pages])
 
     const toggleShow = useCallback((item) => () => {
         const newPages = [...pages]
@@ -80,16 +95,19 @@ function Page2() {
                         <div key={index} className="wrapper" >
                             
                             <div className={`tile ${item.show ? 'show' : 'hide'}`} >
-                                {item.show ? item.article : <span/>}
+                                {item.show ? item.article : <Descript 
+                                    item={item}
+                                    onClick={toggleShow}
+                                    />}
                             </div>
                             {item.show ? <span/> :  <div className="contentWrapper">
                                 <Descript 
                                     item={item}
                                     onClick={toggleShow}
                                     />
-                                {/* <button className={`${item.show ? 'top' : ''}`} >
+                                <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
                                     {item.show ? <p>close</p> : <p>read more!</p> }
-                                </button>                             */}
+                                </button>                            
                             </div>}
                             
 
