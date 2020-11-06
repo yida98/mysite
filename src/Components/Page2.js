@@ -22,7 +22,6 @@ function Page2() {
             article: <Article />,
             show: false,
             initialLoad: false,
-            loadArticle: false,
         },
         {
             id: 1,
@@ -33,7 +32,6 @@ function Page2() {
             article: <Article2 />,
             show: false,
             initialLoad: false,
-            loadArticle: false,
         },
         {
             id: 2,
@@ -44,7 +42,6 @@ function Page2() {
             article: <Article3 />,
             show: false,
             initialLoad: false,
-            loadArticle: false,
         },
     ])
 
