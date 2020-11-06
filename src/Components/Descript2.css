@@ -1,6 +1,5 @@
 .descript {
     min-width: 400px;
-    grid-row: 2/3;
     transition: all 0.5s ease-out;
 }
 
@@ -8,17 +7,11 @@
     font-family: 'Noteworthy';
     font-size: 2em;
     color: #99886B;
-}
-
-.descript img {
-    max-height: 80%;
-    max-width: 25vw;
-    grid-row: 1/4;
-    margin: auto;
+    margin-bottom: 15px;
 }
 
 .descript .subtitle {
     font-family: 'Courier New', Courier, monospace;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #aaa;
 }

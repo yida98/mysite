@@ -6,7 +6,7 @@ import Article2 from './Article2.js'
 import Article3 from './Article3.js'
 import Descript from './Descript.js'
 
-import journImage from './assets/journ-display.png';
+import journImage from './assets/journ-icon.png';
 import blenderImage from './assets/blender-display.png';
 import websiteImage from './assets/mac-display.png';
 
@@ -101,11 +101,11 @@ function Page2() {
                                     />}
                             </div>
                             <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
-                                {item.show ? <p>close</p> : <p>read more!</p> }
+                                {item.show ? <p>less</p> : <p>more</p> }
                             </button>      
                             {item.show ? <span/> :  <div className="contentWrapper">
 
-                                {/* <img src={(item.img)} alt="Image" /> */}                      
+                                <img src={(item.img)} alt="Image" />                      
                             </div>}
                             
 
