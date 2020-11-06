@@ -51,8 +51,13 @@ function Page2() {
     const [currID, setCurrID] = useState(0)
 
     useEffect(() => {
+        window.scrollTo(0,0)
+
         function handleOffset() {
-            setCurrID(Math.floor((window.scrollY + 500)/window.innerHeight))
+            setCurrID(Math.floor((window.scrollY + (window.innerHeight*(4/5)))/window.innerHeight))
+            if (window.scrollY < 20) {
+                resetInitial()
+            }
         }
 
         window.addEventListener("scroll", handleOffset)
@@ -88,7 +93,16 @@ function Page2() {
         
 
     }, [pages])
-    
+
+    const resetInitial = useCallback(() => {
+
+        let newPages = [...pages]
+        newPages.map((item) =>{
+            item.initialLoad = false
+        })
+        setPages(newPages)
+    }, [])
+
     return (
         <div className="page">
 

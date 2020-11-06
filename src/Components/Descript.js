@@ -7,7 +7,7 @@ function Descript( {item, onClick} ) {
     }, [])
 
     return (
-        <div className={`descript`} onClick={onClick(item)}> 
+        <div className={`descript`}> 
             <h2>{item.title}</h2>
             <p className="subtitle">{item.subtitle}</p>
             <p className="content">{item.content}</p>
