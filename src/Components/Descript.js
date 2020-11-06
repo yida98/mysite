@@ -7,20 +7,12 @@ function Descript( {item, onClick} ) {
     }, [])
 
     return (
-        <div className="descript">
-            <img src={(item.img)} alt="Image" />
-            <div className="right" onClick={onClick(item)} style={{
-                marginTop: `${item.initialLoad ?  0 : `${-170}px`}`,
-                opacity: `${item.initialLoad ? 1 : 0}`,
-            }}>
-                <h2>{item.title}</h2>
-                <div className="title">
-                    <p>{item.subtitle}</p>
-                </div>
-                <div className="content">
-                    <p>{item.content}</p>
-                </div>
-            </div>
+        <div className="descript" onClick={onClick(item)} style={{
+            marginTop: `${item.initialLoad ?  `${30}px` : `${-100}%`}`,
+        }}>
+            <h2>{item.title}</h2>
+            <p className="subtitle">{item.subtitle}</p>
+            <p className="content">{item.content}</p>
         </div>
 
     );

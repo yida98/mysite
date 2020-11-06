@@ -1,21 +1,14 @@
 .descript {
-    position: static;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    transition: all 0.2s ease-out;
-    width: 100%;
-    height: 100%;
-
-}
-
-.descript .right {
     min-width: 400px;
     grid-row: 2/3;
-    /* margin: auto; */
     transition: all 0.5s ease-out;
 }
 
+.descript h2 {
+    font-family: 'Noteworthy';
+    font-size: 2em;
+    color: #99886B;
+}
 
 .descript img {
     max-height: 80%;
@@ -24,7 +17,8 @@
     margin: auto;
 }
 
-.descript .right .title {
+.descript .subtitle {
+    font-family: 'Courier New', Courier, monospace;
     margin-bottom: 10px;
     color: #aaa;
 }

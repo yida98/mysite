@@ -49,7 +49,7 @@ function Page2() {
 
     useEffect(() => {
         function handleOffset() {
-            setCurrID(Math.floor((window.scrollY + 400)/window.innerHeight))
+            setCurrID(Math.floor((window.scrollY + 500)/window.innerHeight))
         }
 
         window.addEventListener("scroll", handleOffset)
@@ -100,14 +100,12 @@ function Page2() {
                                     onClick={toggleShow}
                                     />}
                             </div>
+                            <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
+                                {item.show ? <p>close</p> : <p>read more!</p> }
+                            </button>      
                             {item.show ? <span/> :  <div className="contentWrapper">
-                                <Descript 
-                                    item={item}
-                                    onClick={toggleShow}
-                                    />
-                                <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
-                                    {item.show ? <p>close</p> : <p>read more!</p> }
-                                </button>                            
+
+                                {/* <img src={(item.img)} alt="Image" /> */}                      
                             </div>}
                             
 
