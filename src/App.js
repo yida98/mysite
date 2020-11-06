@@ -2,11 +2,8 @@ import React, { useCallback } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
-import Home from './Components/Home.js'
-import Page from './Components/Page2.js'
+import Page from './Components/Page.js'
 import Nav from './Components/Nav.js'
-import Article from './Components/Article.js'
-// import Resume from './Components/Nav.js'
 import About from './Components/About.js'
 
 function App() {
@@ -21,12 +18,10 @@ function App() {
       <Nav />
       
       <Route exact path="/" component = {Page} />  
-      <Route exact path="/project/:id" component = {Article} />  
-      {/* <Route path="/resume" component = {Resume} />   */}
       <Route exact path="/about" component = {About} /> 
     
 
-      <button onClick={backToTop()} className="centre">Back to top</button>
+      <button id="btt" onClick={backToTop()} className="centre">Back to top</button>
     </Router> 
   );
 }

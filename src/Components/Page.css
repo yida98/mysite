@@ -1,84 +1,112 @@
-/* .page {
-    font-family: 'Avenir Next';
-    font-size: 20px;
-    color: #3e3e3e;
-    transition: all 0.2s ease-out;
+.page {
+    margin-top: 10vh;
     height: 100%;
 }
 
-.tile {
-    position: absolute;
-    width: 100%;
-    top: 30%;
-    height: 40%;
-    background-color: #fff;
-    transition: all 0.2s ease-out;
-    scrollbar-color: none;
 
-    border-top: 2px solid #FAF7F2;
-    border-bottom: 2px solid #FAF7F2;
-
-}
-
-.tile:hover {
-    top: 25%;
-    height: 50%;
-    overflow-x: scroll;
-}
-
-.tile.showarticle {
-    top: 0;
-    height: 100%;
-    overflow-x: scroll;
-}
-
-.page button {
-    position: absolute;
-    margin-left: 25vw;
-    margin-top: 23vw;
-    z-index: 10;
-    transition: all 0.2s ease-out;
-}
-
-.page button p {
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #eee;
-    border-radius: 8px;
-    border: 2px solid #EFEDE7;
-}
-
-.page .top {
-    margin-top: 0;
-}
-.page .top p {
-    border-radius: 0 0 8px 8px;
-}
-
-
-.page .hide {
-    opacity: 0;
-    z-index: -1;
-}
+/* Wrapper setup */
 
 .page .wrapper {
     position: relative;
-    margin-bottom: 300px;
-    width: 100%;
-    height: 70vh;
+    height: 80vh;
 }
 
-.page .contentwrapper {
-    transition: all 0.5s ease-in;
-    margin-left: 45vw;
-}
-
-.page .displayTitle {
+.page .wrapper .tile {
     position: absolute;
-    font-size: 72px;
-    color: #DDC9A7;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    top: 20px;
-    left: 10vw;
-} */
+    background-color: #fff;
+    box-shadow: inset 0 2px 4px #aaa;
+    border-radius: 30px 0 0 30px;
+    transition: all 0.2s ease-in;
+    padding: 20px 80px;
+    overflow-y: scroll;
+}
+
+.page .wrapper .tile.show {
+    padding: 20px 0;
+    transition-delay: 0.5s;
+}
+
+.page .wrapper .tile.show .art {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+    transition-delay: 0.7s;
+}
+.page .wrapper .tile.hide .art {
+    visibility: hidden;
+    transform: scaleY(0);
+    opacity: 0;
+    transition-duration: 0.1s;
+}
+
+.page .wrapper button {
+    position: absolute;
+    bottom: 30%;
+    right: 5%;
+    z-index: 10;
+    transition: all 0.2s ease-out;
+    border: 1.5px solid #ccc;
+    padding: 2px 6px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.page .wrapper button.top {
+    bottom: 10%;
+    
+}
+
+
+/* Expand */
+
+.page .wrapper .tile.hide {
+    top: 25%;
+    height: 50%;
+    left: 60%;
+    width: 40%;
+}
+
+.page .wrapper .tile.show {
+    top: 5%;
+    height: 90%;
+    left: 10%;
+    width: 90%;
+}
+
+
+/* Content */
+
+.page .wrapper .contentWrapper {
+    position: absolute;
+    left: 30%;
+    width: 30%;
+    height: 100%;
+    display: flex;
+}
+
+.page .wrapper .contentWrapper img {
+    max-height: 60%;
+    max-width: 90%;
+    margin: auto;
+    transition: all 0.2s ease-out;
+}
+
+/* Animatable */
+
+.page .wrapper .tile .content {
+    transition: all 0.5s ease-in;
+    transition-delay: 0s;
+
+}
+
+.page .wrapper .tile .content.up {
+    margin-top: -100%;
+}
+
+.page .wrapper .tile .content.down {
+    margin-top: 30px;
+}
+
+.page .wrapper .tile .art {
+    transition: visibility 0.5s ease-in, opacity 0.5s ease-in;
+}   

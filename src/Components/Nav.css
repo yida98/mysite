@@ -4,16 +4,12 @@
     top: 0;
     width: 100vw;
     height: 10px;
-    /* width: 100vw;
-    height: 60px; */
     padding: 0px 80px 0px 80px;
     z-index: 11;
-    /* box-shadow: 0px 3px 5px #ccc; */
   }
 
 #navbar, #bottomline, #highlight {
 
-  /* background-color: #998A61; */
   background-color: #ffd483;
 }
 
@@ -44,6 +40,7 @@
   width: 140px;
   transition: 0.2s;
   vertical-align: top;
+  font-family: 'Noteworthy';
 }
 
 
@@ -58,7 +55,6 @@
   width: 140px;
   margin-top: 10px;
   margin-right: 40px;
-  /* padding:0px 10px 0px 10px; */
   z-index: -1;
   transition: all 0.1s ease-out;
 }
@@ -74,11 +70,3 @@
 a {
     text-decoration: none;
 }
-
-/* 
-@keyframes stretch {
-  0%   {transform: scaleX(1.0);}
-  25%  {transform: scaleX(1.2);}
-  50%  {transform: scaleX(1.2);}
-  100% {transform: scaleX(1.0);}
-} */

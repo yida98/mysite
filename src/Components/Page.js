@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './Page2.css';
+import './Page.css';
 
 import Article from './Article.js'
 import Article2 from './Article2.js'
 import Article3 from './Article3.js'
 import Descript from './Descript.js'
 
-import journImage from './assets/journ-display.png';
+import journImage from './assets/journ-icon.png';
 import blenderImage from './assets/blender-display.png';
 import websiteImage from './assets/mac-display.png';
 
@@ -18,7 +18,7 @@ function Page() {
             img: journImage,
             title: "Journ'",
             subtitle: "Swift | CloudKit | Sketch | Blender",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "Journ' is an intuitive journaling app for people who just want to keep writing without distractions.",
             article: <Article />,
             show: false,
             initialLoad: false,
@@ -28,7 +28,7 @@ function Page() {
             img: blenderImage,
             title: "Blender Scripts",
             subtitle: "Python | Blender",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "An add-on full of tools to help with 3D character rigging in Blender.",
             article: <Article2 />,
             show: false,
             initialLoad: false,
@@ -38,68 +38,66 @@ function Page() {
             img: websiteImage,
             title: "My Site",
             subtitle: "ReactJS | Express | HTML/CSS | Git",
-            content: "Journ' is an intuitive journaling app for people who just want to write without distractions.",
+            content: "A website to display my projects; you are here.",
             article: <Article3 />,
             show: false,
             initialLoad: false,
         },
     ])
 
-    const clickMore = useCallback((item) => (event) => {
-        const newPages = [...pages]
-
-        newPages.splice(item.id, 1, {
-            ...item, 
-            show: !item.show, 
-        })
-
-        setPages(newPages)
-
-    }, [pages])
+    const [currID, setCurrID] = useState(0)
 
     useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
+        window.scrollTo(0,0)
 
+        resetInitial()
 
-
-    const [yOffset, setOffset] = useState(0);
-    const [showIntro, setShow] = useState(false);
-
-    const [currentID, setCurrentID] = useState(0)
-
-    useEffect(() => {
-        const loadingItem = pages[currentID]
-        if (!loadingItem.initialLoad) {
-            console.log("first time loading")
-            const newPages = [...pages]
-        
-            newPages.splice(loadingItem.id, 1, {
-                ...loadingItem, 
-                initialLoad: true, 
-            })
-        
-            setPages(newPages)
-        }
-    }, [currentID])
-
-    useEffect(() => {
         function handleOffset() {
-            setOffset(window.pageYOffset)
-            setCurrentID(Math.floor((window.scrollY + 300)/window.innerHeight))
+            setCurrID(Math.floor((window.scrollY + (window.innerHeight*(4/5)))/window.innerHeight))
         }
 
         window.addEventListener("scroll", handleOffset)
-        setShow(!showIntro)
-
+        
         return () => {
-            setShow(false)
             window.removeEventListener("scroll", handleOffset)
         }
     }, [])
-  
-    const display = useCallback((item) => {
+
+    useEffect(() => {
+        const currItem = pages[currID]
+
+        if (!currItem.initialLoad && !currItem.show) {
+            const newPages = [...pages]
+            newPages.splice(currItem.id, 1, {
+                ...currItem, 
+                initialLoad: true,
+            })
+
+            setPages(newPages)
+        }
+
+    }, [currID, pages])
+
+    const toggleShow = useCallback((item) => () => {
+        let newPages = [...pages]
+        newPages.splice(item.id, 1, {
+            ...item, 
+            show: !item.show,
+            initialLoad: !item.initialLoad,
+        })
+        setPages(newPages)
+        
+
     }, [pages])
+
+    const resetInitial = useCallback(() => {
+
+        let newPages = [...pages]
+        newPages.map((item) =>{
+            item.initialLoad = false
+        })
+        setPages(newPages)
+    }, [])
 
     return (
         <div className="page">
@@ -109,40 +107,35 @@ function Page() {
                     
                     return (
                         <div key={index} className="wrapper" >
-
-                            <div 
-                                className={`tile ${item.show ? 'showarticle' : ''}`} 
-                                onClick={item.show ? {} : clickMore(item)}>
-                                {item.show ? item.article :<h2 className={`displayTitle`}>{item.title}</h2>}
-                            </div>
-                                <div className="contentwrapper"
-                                    style={{
-                                        opacity: `${item.initialLoad ? 1 : 0}`,
-                                        marginLeft: `${item.initialLoad ? 45 : 50}vw`,
-                                        // animation: `${item.initialLoad ? 'fade-in-content' : ''} 1s`,
-                                    }}>
-                                    {item.show ? <div/> : (<Descript 
-                                        show={!item.show}
-                                        img={item.img}
-                                        title={item.title}
-                                        subtitle={item.subtitle}
-                                        content={item.content}
-                                        />)}
-                                    <button onClick={clickMore(item)} className={`${item.show ? 'top' : ''}`} >
-                                        {item.show ? <p>close</p> : <p>read more!</p> }
-                                    </button>
+                            
+                            <div className={`tile ${item.show ? 'show' : 'hide'}`} >
+                                <div className="art">
+                                    {item.article} </div>
+                                <div  className={`content ${item.initialLoad ? "down" : "up" }`}>
+                                    <Descript 
+                                        item={item}
+                                        onClick={toggleShow}
+                                    />
                                 </div>
+                            </div>
+                            <button className={`${item.show ? 'top' : ''}`} onClick={toggleShow(item)}>
+                                {item.show ? <p>less</p> : <p>more</p> }
+                            </button>      
+                            <div className="contentWrapper" style={{
+                                    zIndex: `${item.show ? -1 : 10}`
+                                }} >
+                                <img src={(item.img)} alt="Image" style={{
+                                    opacity: `${item.show ? 0 : 1}`,
+                                }}/>             
+                            </div>
 
                         </div>
                     )
 
                     })
             }
-
         </div>
     )
 }
 
 export default Page;
-
-// 
