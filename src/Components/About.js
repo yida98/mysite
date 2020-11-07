@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './About.css';
 
 import profile from "./assets/About2.JPG"
+import github from "./assets/github.png"
 
 import Resume from "./assets/YIDA ZHANG_Resume.pdf"
 
@@ -72,7 +73,7 @@ function About() {
         <p>Shoot me an email at <span>yida</span><span>zhang</span><span>.ca@</span><span>gmai</span>l.com<span></span>!</p>
         
         <p>Click <a href={Resume} download="YIDA_Resume.pdf" onClick={logEvent()}>here</a> to download my resume</p>
-
+        <a href="https://github.com/yida98" target="_blank" title="my only social"> <img src={github} alt="github icon" className="icon"/></a>
         <div className="line" ></div>    
       </div>
     </div>

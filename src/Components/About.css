@@ -70,3 +70,9 @@
     margin: 30px auto 30px auto;
     
 }
+
+#about .icon {
+    border: none;
+    width: 30px;
+    height: auto;
+}

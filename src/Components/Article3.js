@@ -30,7 +30,7 @@ function Article3() {
       </section>
       <section>
         <h2>Implementation</h2>
-        <p>This app was implemented using ReactJS for the frontend and expressJS, MongoDB, and nodemon for the backend. 
+        <p>This app was implemented using ReactJS for the frontend and expressJS and MongoDB for the backend. 
           I didn't use a template to design the layout and animation; instead, I wrote it in good, old CSS and JSX.
           
         </p>

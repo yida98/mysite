@@ -22,7 +22,7 @@ function Nav() {
     const [activeItem, setActive] = useState(navItems.filter(item => item.active === true)[0])
     
     const click = useCallback((item) => (event) => {
-        const newItems = [...navItems]
+        let newItems = [...navItems]
         newItems.map((i) => {
             return(i.id === item.id ? ((i.active = true) && (setActive(i))) : i.active = false);
         })
@@ -30,15 +30,22 @@ function Nav() {
 
     }, []);
 
-    const scroll = "Apps   Full stack websites   Blender scripts   Paintings   3D models   2D animation    3D animation    UI/UX designs"
-
+    const goHome = useCallback(() => {
+        let newItems = [...navItems]
+        let item = navItems[0]
+        newItems.map((i) => {
+            return(i.id === item.id ? ((i.active = true) && (setActive(i))) : i.active = false);
+        })
+        setItems(newItems)
+        window.location.assign("/")
+    })
 
     return (
         <div id="navbar">
             <div id="highlight" style={{
                 right: `${(activeItem.id) * 140}px`,
             }}></div>
-            <h1 className={`${activeItem.id === 0 ? 'about' : ''}`}>YIDA ZHANG</h1>
+            <h1 className={`${activeItem.id === 0 ? 'about' : ''}`} onClick={goHome}>YIDA ZHANG</h1>
                 <div id="buttons">
                 {navItems.map((item, index) => {
                     return(

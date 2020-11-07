@@ -39,7 +39,22 @@ function Article4() {
             <img src={img6} alt="design image" className="shadow rounded maxHeight"/>
 
           </div>
-          
+
+          <h2 style={{ marginTop:`${200}px`}}>Implementation</h2>
+          <p>I implemented Poll App using SwiftUI for the frontend and employed CloudKit for the backend. 
+
+          </p>
+          <h3>The challenge</h3>
+          <p>Just like with most of my designs, I put a heavy emphasis on having a smooth and tailored animation; 
+            however, SwiftUI's UI capabilities are fairly weak and so I had to create a lot of custom classes (that weren't that flexible, had to depend on wrapping Swift objects) and animations to get it to display how it was designed. 
+
+          </p>
+          <h2>Some thoughts</h2>
+          <p>I love the work flow of declarative UI and while SwiftUI is a wonderful tool anyone can use to make some simple apps very fast with very little code, it is still living in the shadow of its predecessor due to its limitations for scaling and customization. 
+            As a designer who loves to work with transitions and a developer who loves to make things work, I look forward to the day SwiftUI becomes as flexible as UIKit was.
+
+            <br/>You can view my app <a href="https://github.com/yida98/poll" target="_blank" >here.</a>
+            </p>
     </div>
   );
 }
