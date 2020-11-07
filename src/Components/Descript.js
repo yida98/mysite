@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import './Descript2.css';
+import './Descript.css';
 
 function Descript( {item, onClick} ) {
 

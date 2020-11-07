@@ -4,11 +4,13 @@ import './Page.css';
 import Article from './Article.js'
 import Article2 from './Article2.js'
 import Article3 from './Article3.js'
+import Article4 from './Article4.js'
 import Descript from './Descript.js'
 
 import journImage from './assets/journ-icon.png';
 import blenderImage from './assets/blender-display.png';
 import websiteImage from './assets/mac-display.png';
+import pollImage from './assets/poll-display.png';
 
 function Page() {
 
@@ -37,9 +39,19 @@ function Page() {
             id: 2,
             img: websiteImage,
             title: "My Site",
-            subtitle: "ReactJS | Express | HTML/CSS | Git",
+            subtitle: "ReactJS | Express | CSS | Git",
             content: "A website to display my projects; you are here.",
             article: <Article3 />,
+            show: false,
+            initialLoad: false,
+        },
+        {
+            id: 3,
+            img: pollImage,
+            title: "Poll App",
+            subtitle: "Swift | CloudKit | Sketch",
+            content: "Let strangers make your decisions for you, anonymously.",
+            article: <Article4 />,
             show: false,
             initialLoad: false,
         },

@@ -1,9 +1,9 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Article.css';
-import bg from "./assets/journ-bg.jpg"
-import IAImage from "./assets/journ-IA.png"
-import underlay from "./assets/journ-screens.png"
-import overlay from "./assets/journ-arrows.png"
+import v1 from "./assets/websitev1.png"
+import v2 from "./assets/websitev2.png"
+import v3 from "./assets/websitev3.png"
+import v4 from "./assets/websitev4.png"
 
 function Article3() {
 
@@ -12,36 +12,37 @@ function Article3() {
       className="article" >
       <h1>My Site</h1>
       <section>
-        <h2>Journ's Conception</h2>
-        <p>I love journaling; it’s therapeutic to write down your thoughts and when reading past entries back, you take a hike down memory lane. As my days get busier and busier, however, even moving to pick up a pencil seemed like too much of a chore. I have tried many other journalling apps, but they always had features or distracting and inconsistent aspects I didn’t like. So, I thought, why should I compromise when I know what I want? As someone who loves a challenge, I decided to make a journaling app that’s fun to navigate and gives the users zero burden to use.</p>
-        <img src={bg} alt="Image" />
+        <h2>The Designs</h2>
+        <p>The first step to designing a website that doesn't have a heavy backend (e.g. can be easily handled by expressJS) is by designing the UI. 
+          Below are a selection of the designs.
+        </p>
+        <div className="grid column2 row2">
+          <img src={v1} alt="Image" className="shadow rounded"/>
+          <img src={v2} alt="Image" className="shadow rounded"/>
+          <img src={v3} alt="Image" className="shadow rounded"/>
+          <img src={v4} alt="Image" className="shadow rounded"/>
+        </div>
+        <p style={{
+          marginTop: `${100}px`,
+        }}>I used Sketch and Adobe XD for the layout design and used Sketch and Blender to create the icons and display images. 
+          I kept designing while I was implementing this app and eventually settled on the design you're seeing right now.
+        </p>
       </section>
       <section>
-        <h2>Key Aspects</h2>
-        <h3>Easy and fun to navigate</h3>
-        <p>The app has very few views. It centers around the monthly calendar where the user can open up entries and edit them. Swiping left and right navigates the user's journal at the monthly granularity. Swiping up on the monthly bar enters the yearly summary of the months and swiping left and right on them navigates the user's journal at the yearly granularity. There are, all together, three main views and the navigation between them follow similar actions to create callback (i.e. swipe up to open means swipe down to close).</p>
-        
-        <section className="half">            
-          <img src={IAImage} alt="IA" className="half"/>
-          <div>
-            <h3>Information Architecture</h3>
-            <p>This IA maps out the simple flow of the app. I wanted there to be very few decisions at every view. Since the structure of the app is so simple, the navigation becomes very straight forward.</p>
-          </div>
-        </section>
-
-        <h3>Burden Free UI</h3>
-        <p>Each view is clear about what their purpose is and they are visually refreshing but they contain all the necessary tools. The UI doesn't crowd the screen for better aesthetics.</p>
-
-        <h3>Ethical Incentives</h3>
-        <p>Each month where the user has journaled everyday shows a celebratory sash on that month’s tab. The app is not achievement based where it pushes you to complete all the months because then it piles on extrinsic motivation which can scare the user away. Instead, having the achievement sash as a response to the users’ actions rewards them for something they decided to do via intrinsic motivation.</p>
+        <h2>Implementation</h2>
+        <p>This app was implemented using ReactJS for the frontend and expressJS, MongoDB, and nodemon for the backend. 
+          I didn't use a template to design the layout and animation; instead, I wrote it in good, old CSS and JSX.
+          
+        </p>
+        <h3>Challenges</h3>
+        <p>After being pamper with SwiftUI, ReactJS was a bit of a nightmare to work with. 
+          The biggest difficulty was stacking animation during transitions considering I was using declarative components. 
+          Luckily, through trial and error, I built some hacky solutions that aren't pretty but look flawless. 
+          <br/>The backend was a breeze using the typical MERN setup as this site is not too data heavy.
+          <br/>You can view the code for this app <a href="https://github.com/yida98/mysite" target="_blank" >here.</a>
+        </p>
 
       </section>
-
-      <section className="overlay">
-        <img src={underlay} alt="underlay" />
-        <img src={overlay} alt="overlay" className="over" />
-      </section>
-
     </div>
   );
 }

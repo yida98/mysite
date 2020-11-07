@@ -1,40 +1,16 @@
 .descript {
-    position: absolute;
-    display: grid;
-    grid-template-columns: 25vw 2fr;
-    grid-template-rows: 25vh 1fr 1fr;
-    transition: all 0.2s ease-out;
+    min-width: 400px;
 }
 
-.descript .title {
-    color: #6A6A6A;
+.descript h2 {
+    font-family: 'Noteworthy';
+    font-size: 2em;
+    color: #99886B;
+    margin-bottom: 15px;
 }
 
-.descript .title h2 {
-    font-size: 72px;
-    color: #4cb5ae;
-    font-family: Arial;
-    font-weight: bold;
-}
-
-.descript .title p {
-    font-size: 0.8em;
-}
-
-.descript .right {
-    /* margin: 0 0 0 80px; */
-    width: 400px;
-    grid-row: 2/3;
-}
-
-.descript .content {
-    padding-bottom: 30px;
-}
-
-.descript img {
-    display: flex;
-    max-height: 40vw;
-    max-width: 25vw;
-    grid-row: 1/4;
-    margin: auto;
+.descript .subtitle {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+    color: #aaa;
 }

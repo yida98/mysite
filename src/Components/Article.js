@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React from 'react';
 import './Article.css';
 import bg from "./assets/journ-bg.jpg"
 import IAImage from "./assets/journ-IA.png"
@@ -15,6 +15,15 @@ function Article() {
         <h2>Journ's Conception</h2>
         <p>I love journaling; it’s therapeutic to write down your thoughts and when reading past entries back, you take a hike down memory lane. As my days get busier and busier, however, even moving to pick up a pencil seemed like too much of a chore. I have tried many other journalling apps, but they always had features or distracting and inconsistent aspects I didn’t like. So, I thought, why should I compromise when I know what I want? As someone who loves a challenge, I decided to make a journaling app that’s fun to navigate and gives the users zero burden to use.</p>
         <img src={bg} alt="Image" />
+        <h3>The problem</h3>
+        <p>Some times having to find a pen or flipping to the right page is enough reason to procrastinate. This project eliminates all those distracting steps that deter the user from their actual task of writing as to not lose their initial inspiration in the process. 
+
+        </p>
+        <h3>My solution</h3>
+        <p>My design won't dazzle the users. Journ' creates a simple environment where the user comes to write their entries when they just want to write an entry. 
+          The lack of navigatory paths ensures the users will not be scared away by a list of potential decisions they would have to make when they just came for a simple task: writing.
+
+        </p>
       </section>
       <section>
         <h2>Key Aspects</h2>
@@ -38,8 +47,24 @@ function Article() {
       </section>
 
       <section className="overlay">
-        <img src={underlay} alt="underlay" />
         <img src={overlay} alt="overlay" className="over" />
+        <img src={underlay} alt="underlay" />
+      </section>
+
+      <section>
+        <h2>Implementation</h2>
+        <p>This app was implemented using SwiftUI and CloudKit and the biggest hurdle was making custom, stateless, functional UI and animation with a fairly incomplete SwiftUI library. 
+          The code can be viewed <a href="https://github.com/yida98/Journ" target="_blank" >here</a>.
+        </p>
+        <h3>Account handling</h3>
+        <p>Journ' synchronizes the user data across all of their devices that has the same iCloud account in a private database. 
+          
+        </p>
+        <h3>UI</h3>
+        <p>Journ' handles like a single-page application by stacking custom components. 
+          The animation of the UI is tedious to create due to the functional nature of this API which makes stacking and interrupting animation difficult. 
+
+        </p>
       </section>
 
     </div>

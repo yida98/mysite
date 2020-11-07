@@ -71,7 +71,7 @@ a:hover, a:active { text-decoration: none; color:#aaa }
   margin-top: 180px;
 }
 
-.body p {
+p, li {
 
   line-height: 150%;
 }
@@ -127,3 +127,10 @@ button:hover {
 html {
   scroll-behavior: smooth;
 } 
+
+.shadow {
+  box-shadow: 0 0 10px #aaa;
+}
+.rounded {
+  border-radius: 20px;
+}
