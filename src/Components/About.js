@@ -42,8 +42,7 @@ function About() {
   }, [cursor])
 
   const logEvent = useCallback(() => (event) => {
-    console.log("log event time")
-    axios.post('http://localhost:5000/about')
+    // axios.post('https://yida-website.herokuapp.com/about')
     // axios.post(window.location.href)
   }, [window.location])
 
